@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProducaoFragment">
+    android:orientation="vertical"
+    tools:context=".fragments.ProducaoFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbProducao"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgBackground"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imgPoster"
+            app:layout_constraintTop_toTopOf="@+id/imgBackground" />
+
+        <TextView
+            android:id="@+id/tvDadosAdicionais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imgPoster"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+        <ProgressBar
+            android:id="@+id/progressBar4"
+            style="@android:style/Widget.Material.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imgPoster"
+            app:layout_constraintTop_toBottomOf="@+id/tvDadosAdicionais" />
+
+        <TextView
+            android:id="@+id/tvAvaliacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/progressBar4"
+            app:layout_constraintTop_toBottomOf="@+id/tvDadosAdicionais" />
+
+        <ImageButton
+            android:id="@+id/imgBtnAvaliacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgPoster"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
+
+        <ImageButton
+            android:id="@+id/imgBtnListas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBackground"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnAvaliacao"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
+
+        <Button
+            android:id="@+id/btnTrailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBackground"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnListas"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
