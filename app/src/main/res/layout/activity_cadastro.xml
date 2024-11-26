@@ -10,7 +10,7 @@
     tools:layout_editor_absoluteY="-1dp">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
