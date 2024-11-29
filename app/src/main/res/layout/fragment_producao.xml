@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0dp">
+    android:padding="0dp"
+    tools:context=".fragments.ProducaoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +12,6 @@
         android:orientation="vertical"
         android:padding="0px">
 
-        <!-- Pôster e título -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tbProducao"
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -38,7 +38,7 @@
                 <ImageView
                     android:id="@+id/imgPoster"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     tools:src="@tools:sample/avatars" />
 
                 <LinearLayout
@@ -47,13 +47,13 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/tvTitulo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/tvDados"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
@@ -64,7 +64,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/movieRating2"
+                            android:id="@+id/tvNota"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -73,20 +73,20 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="Classificação do Usuário" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/floatingActionButton"
+                            android:id="@+id/fbAvaliacao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -94,7 +94,7 @@
                             android:src="@android:drawable/btn_star_big_on" />
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/floatingActionButton3"
+                            android:id="@+id/fbListas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -102,11 +102,11 @@
                             android:src="@android:drawable/btn_star_big_on" />
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/btnTrailer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:text="Assistir Trailer" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -117,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sample_image"
+                android:src=""
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,71 +125,90 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Botão e avaliação -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
-        <!-- Tags associadas -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:text="Tags Associadas"
-            android:textStyle="bold" />
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/tagGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp">
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deserto" />
+                android:orientation="horizontal">
 
-            <!-- Adicione mais Chips conforme necessário -->
-        </com.google.android.material.chip.ChipGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:text="Tags Associadas"
+                    android:textStyle="bold" />
 
-        <!-- Sinopse -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:text="Sinopse"
-            android:textStyle="bold" />
+                <!-- Espaçador -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/movieSynopsis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:text="A jornada de Paul Atreides continua..." />
+                <Button
+                    android:id="@+id/btnAdicionarTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adicionar Tag" />
 
-        <!-- Elenco -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:text="Elenco"
-            android:textStyle="bold" />
+            </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/actorRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="8dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-        <!-- Disponibilidade -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="Sinopse"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSinopse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="A jornada de Paul Atreides continua..." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="Elenco"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvElenco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Lista de Temporadas"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTemporadas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
         <Button
-            android:id="@+id/primeVideoButton"
+            android:id="@+id/btnPlataformas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint=""
             android:text="Disponível em Prime Video"
             android:textColor="@android:color/white" />
 
