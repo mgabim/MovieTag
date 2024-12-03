@@ -36,14 +36,5 @@
         android:stepSize="1.0" />
 
     <!-- Botão -->
-    <Button
-        android:id="@+id/btnAvaliar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="8dp"
-        android:text="Avaliar"
-        android:textColor="@android:color/black" />
 
 </LinearLayout>
