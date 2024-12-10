@@ -6,16 +6,16 @@ import java.util.List;
 
 public class Producao {
 
-    public Integer id;
-    public Integer idApi;
-    public Bitmap poster;
-    public Bitmap backgroundPoster;
-    public String titulo;
-    public Date estreia;
-    public Float nota;
-    public String linkTrailer;
-    public List<Tag> listaTags;
-    public String sinopse;
-    public List<Integrante> listaIntegrantes;
-    public List<Plataforma> listaPlataformas;
+    private Integer id;
+    private Integer idApi;
+    private Bitmap poster;
+    private Bitmap backgroundPoster;
+    private String titulo;
+    private Date estreia;
+    private Float nota;
+    private String linkTrailer;
+    private List<Tag> listaTags;
+    private String sinopse;
+    private List<Integrante> listaIntegrantes;
+    private List<Plataforma> listaPlataformas;
 }
