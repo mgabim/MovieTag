@@ -9,6 +9,7 @@
     <!-- Scroll para comportar os filtros -->
 
     <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -25,36 +26,42 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tipo de título:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <!-- Botão Dropdown -->
+                <ImageView
+                    android:id="@+id/arrowType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src=""
+                    app:srcCompat="@android:drawable/arrow_down_float"
+                    app:tint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/inputType2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Tipo de título:"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-
-            <!-- Botão Dropdown -->
-            <ImageView
-                android:id="@+id/arrowType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src=""
-                app:srcCompat="@android:drawable/arrow_down_float"
-                app:tint="#FFFFFF" />
-
+                android:background="#555555"
+                android:padding="12dp"
+                android:visibility="gone" />
         </LinearLayout>
-
-        <Spinner
-            android:id="@+id/inputType2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#555555"
-            android:padding="12dp"
-            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
