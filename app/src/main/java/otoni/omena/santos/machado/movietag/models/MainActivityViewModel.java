@@ -7,6 +7,9 @@ import java.util.List;
 public class MainActivityViewModel extends ViewModel {
     List<Producao> producoes;
     List<Lista> listas;
+    List<Avaliacao> avaliacoes;
+
+
 
     public List<Producao> getProducoes(){
         // Código preenchendo manual o producoes

@@ -3,7 +3,6 @@ package otoni.omena.santos.machado.movietag.models;
 public class Avaliacao {
     private Producao producao;
     private Integer avaliacao;
-    private Usuario usuario;
 
     public Producao getProducao() {
         return producao;
@@ -21,11 +20,4 @@ public class Avaliacao {
         this.avaliacao = avaliacao;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 }

@@ -10,9 +10,6 @@ public class Usuario {
     private String email;
     private String senha;
     private Bitmap foto;
-    private List<Avaliacao> avaliacoes;
-    private List<Tag> tagsCriadas;
-    private List<Lista> listas;
 
     public Integer getId() {
         return id;
@@ -52,29 +49,5 @@ public class Usuario {
 
     public void setFoto(Bitmap foto) {
         this.foto = foto;
-    }
-
-    public List<Avaliacao> getAvaliacoes() {
-        return avaliacoes;
-    }
-
-    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
-        this.avaliacoes = avaliacoes;
-    }
-
-    public List<Tag> getTagsCriadas() {
-        return tagsCriadas;
-    }
-
-    public void setTagsCriadas(List<Tag> tagsCriadas) {
-        this.tagsCriadas = tagsCriadas;
-    }
-
-    public List<Lista> getListas() {
-        return listas;
-    }
-
-    public void setListas(List<Lista> listas) {
-        this.listas = listas;
     }
 }
