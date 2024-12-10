@@ -1,9 +1,8 @@
 package otoni.omena.santos.machado.movietag.models;
 
 import android.graphics.Bitmap;
-
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Producao {
 
@@ -15,16 +14,8 @@ public class Producao {
     public Date estreia;
     public Float nota;
     public String linkTrailer;
-    public ArrayList<Integer> listaIdTags;
+    public List<Tag> listaTags;
     public String sinopse;
-    public ArrayList<Integer> listaIdIntegrantes;
-    public ArrayList<Integer> listaIdPlataformas;
-
-    public Producao getProducaoById(Integer id){
-        if(id.equals(this.id)){
-            return this;
-        } else{
-            return null;
-        }
-    }
+    public List<Integrante> listaIntegrantes;
+    public List<Plataforma> listaPlataformas;
 }
