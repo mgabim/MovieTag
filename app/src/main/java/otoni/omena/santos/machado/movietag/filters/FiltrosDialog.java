@@ -1,34 +1,30 @@
-package otoni.omena.santos.machado.movietag.components;
+package otoni.omena.santos.machado.movietag.filters;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;  // Import for modern visibility modifiers
 import androidx.fragment.app.DialogFragment;
 
 import otoni.omena.santos.machado.movietag.R;
-import otoni.omena.santos.machado.movietag.filters.TagsFilter;
 
 public class FiltrosDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
         // Get the layout inflater.
         LayoutInflater inflater = requireActivity().getLayoutInflater();
         View dlgView = inflater.inflate(R.layout.dlg_filtros, null);
 
         LinearLayout container = dlgView.findViewById(R.id.container);
 
+        //criando o filtro tags
         TagsFilter tagsFilter =  new TagsFilter(requireActivity());
         container.addView(tagsFilter.getView());
 
@@ -39,12 +35,13 @@ public class FiltrosDialog extends DialogFragment {
                 .setPositiveButton("Pesquisar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        // Sign in the user.
+                        // realizar a busca avancada
+                        // mas por agora, apenas fechar o dialog
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                        //fechar o dialog
                     }
                 });
         return builder.create();
