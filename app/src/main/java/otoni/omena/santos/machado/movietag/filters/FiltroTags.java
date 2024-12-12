@@ -13,13 +13,13 @@ import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
 
-public class TagsFilter {
+public class FiltroTags {
 
     View filtroTags;
 
     List<String> tags = new ArrayList<>();
 
-    public TagsFilter(FragmentActivity activity) {
+    public FiltroTags(FragmentActivity activity) {
         LayoutInflater inflater = activity.getLayoutInflater();
         filtroTags = inflater.inflate(R.layout.dlg_filtros_tags, null);
 

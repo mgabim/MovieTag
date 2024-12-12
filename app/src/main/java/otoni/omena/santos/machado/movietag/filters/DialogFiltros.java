@@ -12,7 +12,7 @@ import androidx.fragment.app.DialogFragment;
 
 import otoni.omena.santos.machado.movietag.R;
 
-public class FiltrosDialog extends DialogFragment {
+public class DialogFiltros extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -24,9 +24,13 @@ public class FiltrosDialog extends DialogFragment {
 
         LinearLayout container = dlgView.findViewById(R.id.container);
 
+        //criando o filtro tipo da producao
+        FiltroTipoProd filtroTipoProd = new FiltroTipoProd(requireActivity());
+        container.addView(filtroTipoProd.getView());
+
         //criando o filtro tags
-        TagsFilter tagsFilter =  new TagsFilter(requireActivity());
-        container.addView(tagsFilter.getView());
+        FiltroTags filtroTags =  new FiltroTags(requireActivity());
+        container.addView(filtroTags.getView());
 
         // Inflate and set the layout for the dialog.
         // Pass null as the parent view because it's going in the dialog layout.
