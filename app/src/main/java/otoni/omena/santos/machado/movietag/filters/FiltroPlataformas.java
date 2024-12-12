@@ -11,40 +11,40 @@ import java.util.HashMap;
 
 import otoni.omena.santos.machado.movietag.R;
 
-public class FiltroTipoProd {
+public class FiltroPlataformas {
 
-    View filtroTipoProd;
+    View filtroPlataformas;
 
-    LinearLayout liFiltroTipoProd;
+    LinearLayout liFiltroPlats;
 
-    public FiltroTipoProd(FragmentActivity activity) {
+    public FiltroPlataformas(FragmentActivity activity) {
         LayoutInflater inflater = activity.getLayoutInflater();
-        filtroTipoProd = inflater.inflate(R.layout.dlg_filtros_tipo_producao, null);
+        filtroPlataformas = inflater.inflate(R.layout.dlg_filtros_plataformas, null);
 
-        liFiltroTipoProd = filtroTipoProd.findViewById(R.id.liFiltroPlats);
+        liFiltroPlats = filtroPlataformas.findViewById(R.id.liFiltroPlats);
 
-        LinearLayout container = filtroTipoProd.findViewById(R.id.container);
+        LinearLayout container = filtroPlataformas.findViewById(R.id.container);
         container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (liFiltroTipoProd.getVisibility() == View.GONE) {
-                    liFiltroTipoProd.setVisibility(View.VISIBLE);
+                if (liFiltroPlats.getVisibility() == View.GONE) {
+                    liFiltroPlats.setVisibility(View.VISIBLE);
                 } else {
-                    liFiltroTipoProd.setVisibility(View.GONE);
+                    liFiltroPlats.setVisibility(View.GONE);
                 }
             }
         });
     }
 
     public View getView(){
-        return filtroTipoProd;
+        return filtroPlataformas;
     }
 
-    public HashMap<String, Boolean> getTipos() {
-        int qtd = liFiltroTipoProd.getChildCount();
+    public HashMap<String, Boolean> getPlataformas() {
+        int qtd = liFiltroPlats.getChildCount();
         HashMap<String, Boolean> checkBoxes = new HashMap<>();
         for(int i = 0; i < qtd; i++){
-            View child = liFiltroTipoProd.getChildAt(i);
+            View child = liFiltroPlats.getChildAt(i);
             CheckBox checkBox = (CheckBox) child;
             checkBoxes.put(checkBox.getText().toString(), checkBox.isChecked());
         }

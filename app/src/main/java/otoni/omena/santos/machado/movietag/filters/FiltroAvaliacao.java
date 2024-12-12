@@ -2,12 +2,12 @@ package otoni.omena.santos.machado.movietag.filters;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.FragmentActivity;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
 
@@ -40,14 +40,10 @@ public class FiltroAvaliacao {
         return filtroAvaliacao;
     }
 
-    public HashMap<String, Boolean> getCheckBoxes() {
-        int qtd = liFiltroAval.getChildCount();
-        HashMap<String, Boolean> checkBoxes = new HashMap<>();
-        for(int i = 0; i < qtd; i++){
-            View child = liFiltroAval.getChildAt(i);
-            CheckBox checkBox = (CheckBox) child;
-            checkBoxes.put(checkBox.getText().toString(), checkBox.isChecked());
-        }
-        return checkBoxes;
+    public List<String> getAvaliacoes() {
+        List<String> avaliacoes = new ArrayList<>();
+        avaliacoes.add(filtroAvaliacao.findViewById(R.id.etAval1).toString());
+        avaliacoes.add(filtroAvaliacao.findViewById(R.id.etAval2).toString());
+        return avaliacoes;
     }
 }

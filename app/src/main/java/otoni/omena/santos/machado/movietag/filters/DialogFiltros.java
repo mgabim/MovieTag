@@ -24,13 +24,25 @@ public class DialogFiltros extends DialogFragment {
 
         LinearLayout container = dlgView.findViewById(R.id.container);
 
-        //criando o filtro tipo da producao
+        //criando o filtro tipo de producao
         FiltroTipoProd filtroTipoProd = new FiltroTipoProd(requireActivity());
         container.addView(filtroTipoProd.getView());
+
+        //criando o filtro avaliacoes
+        FiltroAvaliacao filtroAvaliacao = new FiltroAvaliacao(requireActivity());
+        container.addView(filtroAvaliacao.getView());
 
         //criando o filtro tags
         FiltroTags filtroTags =  new FiltroTags(requireActivity());
         container.addView(filtroTags.getView());
+
+        //criando o filtro plataformas
+        FiltroPlataformas filtroPlataformas = new FiltroPlataformas(requireActivity());
+        container.addView(filtroPlataformas.getView());
+
+        //criando o filtro idioma
+        FiltroIdioma filtroIdioma = new FiltroIdioma(requireActivity());
+        container.addView(filtroIdioma.getView());
 
         // Inflate and set the layout for the dialog.
         // Pass null as the parent view because it's going in the dialog layout.
