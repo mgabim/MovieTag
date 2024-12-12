@@ -6,47 +6,44 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import otoni.omena.santos.machado.movietag.R;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText etUsuarioCadastro, etEmailCadastro, etConfirmarSenha, etSenhaCadastro;
+
+    EditText etUsuarioEmail, etSenha;
     TextView tvIrParaCadastro;
     Button btnLogar;
     String usuarioEmail, senha;
-}
 
-    @Override
+@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Lógica para criar imagem ou adicionar imagem da Galeria
-
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        tvIrParaCadastro = findViewById(R.id.tvIrParaCadastro);
+        tvIrParaCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                etEmailCadastro = findViewById(R.id.etEmailCadastro);
-                email = etEmailCadastro.getText().toString();
-
-                etUsuarioCadastro = findViewById(R.id.etUsuarioCadastro);
-                usuario = etUsuarioCadastro.getText().toString();
-
-                etSenhaCadastro = findViewById(R.id.etSenhaCadastro);
-                senha = etSenhaCadastro.getText().toString();
-
-                etConfirmarSenha = findViewById(R.id.etConfirmarSenhaCadastro);
-                confirmaSenha = etConfirmarSenha.getText().toString();
-
-                // Verificações
-
-                Intent i = new Intent(CadastroActivity.this, MainActivity.class);
+                Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
                 startActivity(i);
-    }
-}
+            }
+        });
+
+        btnLogar = findViewById(R.id.btnLogar);
+        btnLogar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etUsuarioEmail = findViewById(R.id.etUsuario);
+                usuarioEmail = etUsuarioEmail.getText().toString();
+
+                etSenha = findViewById(R.id.etSenha);
+                senha = etSenha.getText().toString();
+
+                // Verificações no Banco
+
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });}}

@@ -1,4 +1,6 @@
 package otoni.omena.santos.machado.movietag.models;
 
-public class CadastroActivityViewModel {
+import androidx.lifecycle.ViewModel;
+
+public class CadastroActivityViewModel extends ViewModel {
 }
