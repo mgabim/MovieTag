@@ -85,10 +85,7 @@ public class CadastroActivity extends AppCompatActivity {
                     Toast.makeText(CadastroActivity.this, "As senhas devem coincidir", Toast.LENGTH_LONG).show();
                 } // Talvez vire uma função para verificar tudo, inclusive no banco
 
-                Usuario usuario = new Usuario();
-
-                Intent i = new Intent(CadastroActivity.this, MainActivity.class);
-                startActivity(i);
+                finish();
             }
         });
     }

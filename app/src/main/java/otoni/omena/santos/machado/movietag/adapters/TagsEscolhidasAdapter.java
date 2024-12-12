@@ -1,4 +1,4 @@
 package otoni.omena.santos.machado.movietag.adapters;
 
-public class filmesListaAdapter {
+public class TagsEscolhidasAdapter {
 }

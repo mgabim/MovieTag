@@ -1,6 +1,7 @@
 package otoni.omena.santos.machado.movietag.models;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 import java.util.List;
 
@@ -8,8 +9,14 @@ public class Usuario {
     private Integer id;
     private String usuario;
     private String email;
-    private String senha;
-    private Bitmap foto;
+    private int foto;
+
+    public Usuario(Integer id, String usuario, String email,  int foto) {
+        this.id = id;
+        this.usuario = usuario;
+        this.email = email;
+        this.foto = foto;
+    }
 
     public Integer getId() {
         return id;
@@ -35,19 +42,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public Bitmap getFoto() {
+    public int getFoto() {
         return foto;
     }
 
-    public void setFoto(Bitmap foto) {
+    public void setFoto(int foto) {
         this.foto = foto;
     }
 }
