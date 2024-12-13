@@ -12,7 +12,7 @@ import androidx.fragment.app.DialogFragment;
 
 import otoni.omena.santos.machado.movietag.R;
 
-public class DialogFiltros extends DialogFragment {
+public class                                                                                                                                                                                                                         DialogFiltros extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

@@ -12,6 +12,7 @@ public class MainActivityViewModel extends ViewModel {
     int navigationOpSelected = R.id.inicioViewOp; // Opção escolhida pelo usuário no btNav
     List<Producao> producoes;
     List<Lista> listas;
+    List<Lista> listasPadrao;
     List<Avaliacao> avaliacoes;
 
     Usuario usuario;
@@ -36,6 +37,10 @@ public class MainActivityViewModel extends ViewModel {
 
     public Usuario getUsuario() {
         usuario = new Usuario(1, "guihocosta", "guiihocosta@gmail.com", R.drawable.fotoperfil);
-        return usuario;
+        return this.usuario;
+    }
+
+    public List<Lista> getListasPadrao() {
+        return this.listasPadrao;
     }
 }

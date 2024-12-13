@@ -19,8 +19,8 @@ import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class ListasHomeAdapter extends RecyclerView.Adapter {
     HomeFragment homeFragment;
-    List<Producao> listasProducoesHome;
-    public ListasHomeAdapter(HomeFragment homeFragment) {
+    List<Lista> listasProducoesHome;
+    public ListasHomeAdapter(HomeFragment homeFragment, List<Lista> listasProducoesHome) {
         this.homeFragment = homeFragment;
         this.listasProducoesHome = listasProducoesHome;
     }
@@ -39,9 +39,11 @@ public class ListasHomeAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         TextView tvTituloItemHome = holder.itemView.findViewById(R.id.tvTituloItemHome);
+        tvTituloItemHome.setText(listasProducoesHome.get(position).getNome());
+
         RecyclerView rvListasHome = (RecyclerView)holder.itemView.findViewById(R.id.rvItemHome);
 
-        CarrosselFilmesAdapter carrosselFilmesAdapter = new CarrosselFilmesAdapter(homeFragment);
+        CarrosselFilmesAdapter carrosselFilmesAdapter = new CarrosselFilmesAdapter(homeFragment, listasProducoesHome.get(position).getProducoes());
         rvListasHome.setAdapter(carrosselFilmesAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(rvListasHome.getContext(), LinearLayoutManager.HORIZONTAL, false));
     }

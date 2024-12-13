@@ -59,11 +59,11 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rvListasHome = (RecyclerView)view.findViewById(R.id.rvListasHomeFragment);
         vm = new ViewModelProvider(getActivity()).get(MainActivityViewModel.class);
-        homeAdapter = new ListasHomeAdapter(HomeFragment.this);
+
+        List<Lista> listasProducoesHome = vm.getListasPadrao();
+        homeAdapter = new ListasHomeAdapter(HomeFragment.this, listasProducoesHome);
 
         rvListasHome.setAdapter(homeAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
     }
 }
