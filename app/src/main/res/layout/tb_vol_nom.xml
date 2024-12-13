@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/tbVN"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -15,22 +15,21 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <ImageButton
-        android:id="@+id/btnVoltar"
+        android:id="@+id/btnVoltarVN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/tbVN"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator"
         tools:layout_editor_absoluteX="8dp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvNomeVN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.355"
+        app:layout_constraintBottom_toBottomOf="@+id/tbVN"
+        app:layout_constraintTop_toTopOf="@+id/tbVN"
         tools:layout_editor_absoluteX="217dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
