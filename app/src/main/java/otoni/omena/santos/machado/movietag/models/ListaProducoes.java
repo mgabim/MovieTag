@@ -2,7 +2,7 @@ package otoni.omena.santos.machado.movietag.models;
 
 import java.util.List;
 
-public class Lista {
+public class ListaProducoes {
     private List<Producao> producoes;
     private String nome;
 

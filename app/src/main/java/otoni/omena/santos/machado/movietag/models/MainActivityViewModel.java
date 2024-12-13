@@ -1,7 +1,5 @@
 package otoni.omena.santos.machado.movietag.models;
 
-import android.graphics.Bitmap;
-
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
@@ -11,8 +9,8 @@ import otoni.omena.santos.machado.movietag.R;
 public class MainActivityViewModel extends ViewModel {
     int navigationOpSelected = R.id.inicioViewOp; // Opção escolhida pelo usuário no btNav
     List<Producao> producoes;
-    List<Lista> listas;
-    List<Lista> listasPadrao;
+    List<ListaProducoes> listas;
+    List<ListaProducoes> listasPadrao;
     List<Avaliacao> avaliacoes;
 
     Usuario usuario;
@@ -31,7 +29,7 @@ public class MainActivityViewModel extends ViewModel {
         return this.producoes;
     }
 
-    public List<Lista> getListas(){
+    public List<ListaProducoes> getListas(){
         return this.listas;
     }
 
@@ -40,7 +38,7 @@ public class MainActivityViewModel extends ViewModel {
         return this.usuario;
     }
 
-    public List<Lista> getListasPadrao() {
+    public List<ListaProducoes> getListasPadrao() {
         return this.listasPadrao;
     }
 }

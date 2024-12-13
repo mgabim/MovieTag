@@ -19,9 +19,8 @@ import java.util.List;
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.ListasHomeAdapter;
-import otoni.omena.santos.machado.movietag.models.Lista;
+import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
-import otoni.omena.santos.machado.movietag.models.Producao;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,7 +29,7 @@ import otoni.omena.santos.machado.movietag.models.Producao;
  */
 public class HomeFragment extends Fragment {
     ListasHomeAdapter homeAdapter;
-    List<Lista> listasProducoesHome;
+    List<ListaProducoes> listasProducoesHome;
     MainActivity mainActivity;
     private View view;
     private MainActivityViewModel vm;
@@ -69,7 +68,7 @@ public class HomeFragment extends Fragment {
         RecyclerView rvListasHome = (RecyclerView)view.findViewById(R.id.rvListasHomeFragment);
         vm = new ViewModelProvider(getActivity()).get(MainActivityViewModel.class);
 
-        List<Lista> listasProducoesHome = vm.getListasPadrao();
+        List<ListaProducoes> listasProducoesHome = vm.getListasPadrao();
         homeAdapter = new ListasHomeAdapter(mainActivity, listasProducoesHome);
 
         rvListasHome.setAdapter(homeAdapter);

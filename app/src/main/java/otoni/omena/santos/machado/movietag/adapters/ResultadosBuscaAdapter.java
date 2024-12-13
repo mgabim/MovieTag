@@ -3,6 +3,8 @@ package otoni.omena.santos.machado.movietag.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,14 +13,15 @@ import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.fragments.ResultadoBuscaFragment;
-import otoni.omena.santos.machado.movietag.models.Lista;
+import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
+import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class ResultadosBuscaAdapter extends RecyclerView.Adapter {
     ResultadoBuscaFragment resultadoBuscaFragment;
-    List<Lista> listaResultadoBusca;
+    List<Producao> listaResultadoBusca;
 
-    public ResultadosBuscaAdapter(ResultadoBuscaFragment resultadoBuscaFragment,List<Lista> listaResultadoBusca) {
+    public ResultadosBuscaAdapter(ResultadoBuscaFragment resultadoBuscaFragment,List<Producao> listaResultadoBusca) {
         this.resultadoBuscaFragment = resultadoBuscaFragment;
         this.listaResultadoBusca = listaResultadoBusca;
     }
@@ -31,14 +34,25 @@ public class ResultadosBuscaAdapter extends RecyclerView.Adapter {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         // Recebe o constraint layout
-        View v = inflater.inflate(R.layout.fragment_resultado_busca, parent, false);
+        View v = inflater.inflate(R.layout.item_busca, parent, false);
         return new MyViewHolder(v);
+
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        RecyclerView rvResultados = (RecyclerView)holder.itemView.findViewById(R.id.rvResultados);
+        TextView tvTituloProducaoLista = holder.itemView.findViewById(R.id.tvTituloProducaoLista);
+        tvTituloProducaoLista.setText(listaResultadoBusca.get(position).getTitulo());
+
+        TextView tvSinopseProducaoLista = holder.itemView.findViewById(R.id.tvSinopseProducaoLista);
+        tvTituloProducaoLista.setText(listaResultadoBusca.get(position).getSinopse());
+
+        ImageView imvProducao = holder.itemView.findViewById(R.id.imgPosterLista);
+        imvProducao.setImageBitmap(listaResultadoBusca.get(position).getPoster());
+
+        //Perguntar ao Daniel como preencher chip group com limite de espaço
+
     }
 
     @Override
