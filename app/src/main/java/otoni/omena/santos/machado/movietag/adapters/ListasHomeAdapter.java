@@ -12,16 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.fragments.HomeFragment;
 import otoni.omena.santos.machado.movietag.models.Lista;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class ListasHomeAdapter extends RecyclerView.Adapter {
-    HomeFragment homeFragment;
+    MainActivity mainActivity;
     List<Lista> listasProducoesHome;
-    public ListasHomeAdapter(HomeFragment homeFragment, List<Lista> listasProducoesHome) {
-        this.homeFragment = homeFragment;
+    public ListasHomeAdapter(MainActivity mainActivity, List<Lista> listasProducoesHome) {
+        this.mainActivity = mainActivity;
         this.listasProducoesHome = listasProducoesHome;
     }
 
@@ -43,7 +44,7 @@ public class ListasHomeAdapter extends RecyclerView.Adapter {
 
         RecyclerView rvListasHome = (RecyclerView)holder.itemView.findViewById(R.id.rvItemHome);
 
-        CarrosselFilmesAdapter carrosselFilmesAdapter = new CarrosselFilmesAdapter(homeFragment, listasProducoesHome.get(position).getProducoes());
+        CarrosselFilmesAdapter carrosselFilmesAdapter = new CarrosselFilmesAdapter(mainActivity, listasProducoesHome.get(position).getProducoes());
         rvListasHome.setAdapter(carrosselFilmesAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(rvListasHome.getContext(), LinearLayoutManager.HORIZONTAL, false));
     }

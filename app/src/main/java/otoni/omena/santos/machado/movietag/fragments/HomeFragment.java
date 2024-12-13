@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.ListasHomeAdapter;
 import otoni.omena.santos.machado.movietag.models.Lista;
 import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
@@ -29,8 +30,7 @@ import otoni.omena.santos.machado.movietag.models.Producao;
 public class HomeFragment extends Fragment {
     ListasHomeAdapter homeAdapter;
     List<Lista> listasProducoesHome;
-
-    // Declarar ViewModel
+    MainActivity mainActivity;
     private View view;
     private MainActivityViewModel vm;
 
@@ -38,8 +38,16 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public HomeFragment(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
+    }
+
     public static HomeFragment newInstance() {
         return new HomeFragment();
+    }
+
+    public static HomeFragment newInstance(MainActivity mainActivity) {
+        return new HomeFragment(mainActivity);
     }
 
     @Override
@@ -61,7 +69,7 @@ public class HomeFragment extends Fragment {
         vm = new ViewModelProvider(getActivity()).get(MainActivityViewModel.class);
 
         List<Lista> listasProducoesHome = vm.getListasPadrao();
-        homeAdapter = new ListasHomeAdapter(HomeFragment.this, listasProducoesHome);
+        homeAdapter = new ListasHomeAdapter(mainActivity, listasProducoesHome);
 
         rvListasHome.setAdapter(homeAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(getContext()));

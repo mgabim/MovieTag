@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 vm.setNavigationOpSelected(item.getItemId());
                 int itemId = item.getItemId();
                 if (itemId == R.id.inicioViewOp){
-                    HomeFragment homeFragment = HomeFragment.newInstance();
+                    HomeFragment homeFragment = HomeFragment.newInstance(MainActivity.this);
                     setFragment(homeFragment);
                 }
                 if (itemId == R.id.minhasListasViewOp){
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setFragment(Fragment fragment) {
+    public void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.flPrincipal, fragment);
         fragmentTransaction.addToBackStack(null);

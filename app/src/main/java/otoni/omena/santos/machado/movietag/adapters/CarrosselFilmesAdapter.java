@@ -12,15 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.fragments.HomeFragment;
+import otoni.omena.santos.machado.movietag.fragments.ProducaoFragment;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class CarrosselFilmesAdapter extends RecyclerView.Adapter {
-    HomeFragment homeFragment;
+    MainActivity mainActivity;
     List<Producao> producaoList;
-    public CarrosselFilmesAdapter(HomeFragment homeFragment, List<Producao> producaoList) {
-        this.homeFragment = homeFragment;
+    public CarrosselFilmesAdapter(MainActivity mainActivity, List<Producao> producaoList) {
+        this.mainActivity = mainActivity;
         this.producaoList = producaoList;
     }
 
@@ -45,7 +47,8 @@ public class CarrosselFilmesAdapter extends RecyclerView.Adapter {
         imvProducao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ProducaoFragment producaoFragment = ProducaoFragment.newInstance(producaoList.get(position));
+                mainActivity.setFragment(producaoFragment);
             }
         });
 
