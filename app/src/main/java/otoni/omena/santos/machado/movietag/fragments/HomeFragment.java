@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,9 +19,8 @@ import java.util.List;
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.ListasHomeAdapter;
-import otoni.omena.santos.machado.movietag.models.Lista;
+import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
-import otoni.omena.santos.machado.movietag.models.Producao;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,10 +29,11 @@ import otoni.omena.santos.machado.movietag.models.Producao;
  */
 public class HomeFragment extends Fragment {
     ListasHomeAdapter homeAdapter;
-    List<Lista> listasProducoesHome;
+    List<ListaProducoes> listasProducoesHome;
     MainActivity mainActivity;
     private View view;
     private MainActivityViewModel vm;
+    View home;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -68,10 +69,16 @@ public class HomeFragment extends Fragment {
         RecyclerView rvListasHome = (RecyclerView)view.findViewById(R.id.rvListasHomeFragment);
         vm = new ViewModelProvider(getActivity()).get(MainActivityViewModel.class);
 
-        List<Lista> listasProducoesHome = vm.getListasPadrao();
+        List<ListaProducoes> listasProducoesHome = vm.getListasPadrao();
         homeAdapter = new ListasHomeAdapter(mainActivity, listasProducoesHome);
 
         rvListasHome.setAdapter(homeAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LayoutInflater inflater = mainActivity.getLayoutInflater();
+        home = inflater.inflate(R.layout.fragment_home, null);
+
+        Toolbar toolbar = home.findViewById(R.id.tbImIc);
+        setSupportActionBar(toolbar);
     }
 }

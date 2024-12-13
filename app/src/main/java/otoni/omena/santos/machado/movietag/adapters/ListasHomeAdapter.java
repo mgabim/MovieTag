@@ -13,15 +13,13 @@ import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
-import otoni.omena.santos.machado.movietag.fragments.HomeFragment;
-import otoni.omena.santos.machado.movietag.models.Lista;
+import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
-import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class ListasHomeAdapter extends RecyclerView.Adapter {
     MainActivity mainActivity;
-    List<Lista> listasProducoesHome;
-    public ListasHomeAdapter(MainActivity mainActivity, List<Lista> listasProducoesHome) {
+    List<ListaProducoes> listasProducoesHome;
+    public ListasHomeAdapter(MainActivity mainActivity, List<ListaProducoes> listasProducoesHome) {
         this.mainActivity = mainActivity;
         this.listasProducoesHome = listasProducoesHome;
     }

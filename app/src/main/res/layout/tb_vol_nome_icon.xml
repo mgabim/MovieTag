@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+             android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tbVN"
+        android:id="@+id/tbVNI"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -21,16 +22,16 @@
         android:layout_height="0dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/tbVN"
-        app:layout_constraintEnd_toEndOf="@+id/tbVN"
-        app:layout_constraintStart_toStartOf="@+id/tbVN"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toBottomOf="@+id/tbVNI"
+        app:layout_constraintEnd_toEndOf="@+id/tbVNI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tbVNI">
 
         <ImageButton
-            android:id="@+id/btnVoltarVN"
+            android:id="@+id/imgBtnBackVNI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="?attr/homeAsUpIndicator" />
+            app:srcCompat="?attr/actionModeCloseDrawable" />
 
         <Space
             android:layout_width="wrap_content"
@@ -38,10 +39,21 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/tvNomeVN"
+            android:id="@+id/tvTbVNI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgBtnIconVNI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_dialog" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
