@@ -33,6 +33,7 @@ public class HomeFragment extends Fragment {
     MainActivity mainActivity;
     private View view;
     private MainActivityViewModel vm;
+    View home;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -73,5 +74,11 @@ public class HomeFragment extends Fragment {
 
         rvListasHome.setAdapter(homeAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LayoutInflater inflater = mainActivity.getLayoutInflater();
+        home = inflater.inflate(R.layout.fragment_home, null);
+
+        Toolbar toolbar = home.findViewById(R.id.tbImIc);
+        setSupportActionBar(toolbar);
     }
 }
