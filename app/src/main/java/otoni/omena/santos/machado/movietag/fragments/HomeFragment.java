@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -22,6 +23,7 @@ import otoni.omena.santos.machado.movietag.adapters.ListasHomeAdapter;
 import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
@@ -34,6 +36,7 @@ public class HomeFragment extends Fragment {
     private View view;
     private MainActivityViewModel vm;
     View home;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -79,6 +82,8 @@ public class HomeFragment extends Fragment {
         home = inflater.inflate(R.layout.fragment_home, null);
 
         Toolbar toolbar = home.findViewById(R.id.tbImIc);
-        setSupportActionBar(toolbar);
+        mainActivity.setSupportActionBar(toolbar);
+
+        ActionBar actionBar = mainActivity.getSupportActionBar();
     }
 }
