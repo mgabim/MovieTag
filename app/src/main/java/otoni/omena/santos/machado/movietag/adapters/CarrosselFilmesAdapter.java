@@ -44,10 +44,12 @@ public class CarrosselFilmesAdapter extends RecyclerView.Adapter {
         ImageView imvProducao = holder.itemView.findViewById(R.id.imgProducao);
         imvProducao.setImageBitmap(producaoList.get(position).getPoster());
 
+        Producao producaoAtual = producaoList.get(position);
+
         imvProducao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProducaoFragment producaoFragment = ProducaoFragment.newInstance(producaoList.get(position));
+                ProducaoFragment producaoFragment = ProducaoFragment.newInstance(mainActivity, producaoAtual);
                 mainActivity.setFragment(producaoFragment);
             }
         });

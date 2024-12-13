@@ -73,7 +73,6 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -86,12 +85,12 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/fbAddFotoPerfil"
+                            android:id="@+id/floatingActionButton3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:clickable="true"
-                            android:src="@android:drawable/btn_star_big_on" />
+                            android:src="@android:drawable/ic_dialog_alert" />
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
                             android:id="@+id/fbListas"
