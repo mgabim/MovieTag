@@ -9,17 +9,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
+import otoni.omena.santos.machado.movietag.models.Avaliacao;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProducaoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProducaoFragment extends Fragment {
     MainActivity mainActivity;
     Producao producao;
@@ -64,5 +62,42 @@ public class ProducaoFragment extends Fragment {
         TextView tvDados = view.findViewById(R.id.tvDados);
         String dadosGerais = ""; // Implementar
         tvDados.setText(dadosGerais);
+
+        TextView tvNota = view.findViewById(R.id.tvNota);
+        tvNota.setText(producao.getNota().toString());
+
+        Button btnAvaliar = view.findViewById(R.id.btnAvaliarProducao);
+        btnAvaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirDialogoAvaliacao();
+            }
+        });
+
+    }
+
+    private void abrirDialogoAvaliacao() {
+        // Criar um diálogo
+        View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dlg_avaliacao, null);
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireContext());
+        builder.setView(dialogView);
+
+        // Configurar elementos do layout do diálogo
+        RatingBar rbAvaliacao = dialogView.findViewById(R.id.rbAvaliacao);
+        Button btnConfirmar = dialogView.findViewById(R.id.btnConfirmarAvaliacao);
+
+        // Criar e exibir o diálogo
+        androidx.appcompat.app.AlertDialog dialog = builder.create();
+        dialog.show();
+
+        // Configurar ação do botão confirmar
+        btnConfirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float avaliacao = rbAvaliacao.getRating();
+                Avaliacao av = new Avaliacao(avaliacao);
+                dialog.dismiss(); // Fechar o diálogo
+            }
+        });
     }
 }

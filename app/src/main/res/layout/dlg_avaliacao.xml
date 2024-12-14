@@ -36,6 +36,12 @@
         android:rating="0"
         android:stepSize="1.0" />
 
+    <Button
+        android:id="@+id/btnConfirmarAvaliacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
     <!-- Botão -->
 
 </LinearLayout>
