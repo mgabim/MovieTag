@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
         android:clickable="true"
         android:src="?attr/homeAsUpIndicator" />
 
@@ -56,18 +57,28 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
             </androidx.cardview.widget.CardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastro" />
 
         <EditText
             android:id="@+id/etUsuarioCadastro"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:hint="Nome"
             android:inputType="text"
-            android:text="Name" />
+            android:padding="12dp"
+            android:textColor="#fff" />
 
         <EditText
             android:id="@+id/etEmailCadastro"
@@ -99,6 +110,7 @@
 
         <Button
             android:id="@+id/btnCadastrar"
+            style="@style/botaoAmarelo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -112,6 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="TextView" />
+
     </LinearLayout>
 
 </LinearLayout>

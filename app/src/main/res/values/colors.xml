@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background">#2c2c2c</color>
-    <color name="cinza">#242424</color>
+    <color name="preto">#000</color>
+    <color name="branco">#fff</color>
+    <color name="cinzaNav">#242424</color>
+    <color name="cinzaDialog">#383838</color>
     <color name="amarelo">#e6c222</color>
     <color name="roxo">#515160</color>
 </resources>
