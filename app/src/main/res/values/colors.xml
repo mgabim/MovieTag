@@ -5,6 +5,7 @@
     <color name="branco">#fff</color>
     <color name="cinzaNav">#242424</color>
     <color name="cinzaDialog">#383838</color>
+    <color name="cinzaBotao">#696969</color>
     <color name="amarelo">#e6c222</color>
     <color name="roxo">#515160</color>
 </resources>
