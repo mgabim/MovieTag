@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#333"
+    android:background="@color/cinzaDialog"
     android:orientation="vertical">
 
     <LinearLayout
@@ -35,9 +35,10 @@
 
     <AutoCompleteTextView
         android:id="@+id/etFiltroIdioma"
+        style="@style/inputTexto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AutoCompleteTextView"
+        android:layout_marginBottom="16dp"
         android:visibility="gone" />
 
 </LinearLayout>

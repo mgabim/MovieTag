@@ -35,9 +35,10 @@
 
     <AutoCompleteTextView
         android:id="@+id/etFiltroTag"
+        style="@style/inputTexto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AutoCompleteTextView"
+        android:layout_marginBottom="16dp"
         android:visibility="gone" />
 
 </LinearLayout>
