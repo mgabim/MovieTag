@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -35,7 +38,6 @@ public class HomeFragment extends Fragment {
     MainActivity mainActivity;
     private View view;
     private MainActivityViewModel vm;
-    View home;
 
 
     public HomeFragment() {
@@ -57,6 +59,8 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -78,12 +82,31 @@ public class HomeFragment extends Fragment {
         rvListasHome.setAdapter(homeAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        LayoutInflater inflater = mainActivity.getLayoutInflater();
-        home = inflater.inflate(R.layout.fragment_home, null);
 
-        Toolbar toolbar = home.findViewById(R.id.tbImIc);
-        mainActivity.setSupportActionBar(toolbar);
+        Toolbar toolbar = view.findViewById(R.id.tbImIc);
+        if (requireActivity() instanceof MainActivity){
+            MainActivity activity = (MainActivity) requireActivity();
+            activity.setSupportActionBar(toolbar);
+        }
 
-        ActionBar actionBar = mainActivity.getSupportActionBar();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
+        inflater.inflate(R.menu.menu_home_fragment, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+    //configurar ação quando o botão de pesquisa for acionado
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.action_search:
+                //fazer a ação
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
