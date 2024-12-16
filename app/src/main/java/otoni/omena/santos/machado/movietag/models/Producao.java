@@ -18,6 +18,15 @@ public class Producao {
     private String sinopse;
     private List<Integrante> listaIntegrantes;
     private List<Plataforma> listaPlataformas;
+    private List<Producao> temporadas;
+
+    public List<Producao> getTemporadas() {
+        return temporadas;
+    }
+
+    public void setTemporadas(List<Producao> temporadas) {
+        this.temporadas = temporadas;
+    }
 
     public Integer getId() {
         return id;

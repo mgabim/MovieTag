@@ -4,6 +4,11 @@ public class Avaliacao {
     private Producao producao;
     private Integer avaliacao;
 
+    public Avaliacao(Producao prod, int avaliacaoInt) {
+       avaliacao = avaliacaoInt;
+       producao = prod;
+    }
+
     public Producao getProducao() {
         return producao;
     }
