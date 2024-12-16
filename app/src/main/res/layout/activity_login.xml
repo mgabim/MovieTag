@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:cardCornerRadius="16dp">
+            app:cardCornerRadius="64dp">
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -39,17 +39,18 @@
 
         <EditText
             android:id="@+id/etUsuario"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/etSenha"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -60,6 +61,7 @@
 
         <Button
             android:id="@+id/btnLogar"
+            style="@style/botaoAmarelo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -72,7 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Não possui conta? Criar Conta" />
+            android:text="Não possui conta? Criar Conta"
+            android:textColor="@color/branco" />
 
     </LinearLayout>
 
