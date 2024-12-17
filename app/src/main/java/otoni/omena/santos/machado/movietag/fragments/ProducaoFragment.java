@@ -28,14 +28,6 @@ public class ProducaoFragment extends Fragment {
     MainActivity mainActivity;
     Producao producao;
 
-    public ProducaoFragment() {
-        // Required empty public constructor
-    }
-
-    public static ProducaoFragment newInstance() {
-        return new ProducaoFragment();
-    }
-
     public ProducaoFragment(MainActivity mainActivity, Producao producao) {
         this.mainActivity = mainActivity;
         this.producao = producao;

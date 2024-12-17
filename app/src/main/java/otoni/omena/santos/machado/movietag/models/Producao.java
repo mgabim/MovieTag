@@ -8,8 +8,8 @@ public class Producao {
 
     private Integer id;
     private Integer idApi;
-    private Bitmap poster;
-    private Bitmap backgroundPoster;
+    private Integer poster;
+    private Integer backgroundPoster;
     private String titulo;
     private Date estreia;
     private Float nota;
@@ -44,19 +44,19 @@ public class Producao {
         this.idApi = idApi;
     }
 
-    public Bitmap getPoster() {
+    public Integer getPoster() {
         return poster;
     }
 
-    public void setPoster(Bitmap poster) {
+    public void setPoster(Integer poster) {
         this.poster = poster;
     }
 
-    public Bitmap getBackgroundPoster() {
+    public Integer getBackgroundPoster() {
         return backgroundPoster;
     }
 
-    public void setBackgroundPoster(Bitmap backgroundPoster) {
+    public void setBackgroundPoster(Integer backgroundPoster) {
         this.backgroundPoster = backgroundPoster;
     }
 

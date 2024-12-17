@@ -47,7 +47,5 @@ public class TabTagsFragment extends Fragment {
         TagsUsuarioAdapter tagsUsuarioAdapter = new TagsUsuarioAdapter(mainActivity);
         rvTags.setAdapter(tagsUsuarioAdapter);
         rvTags.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
     }
 }
