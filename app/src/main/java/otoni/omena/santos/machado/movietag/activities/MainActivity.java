@@ -26,6 +26,11 @@ import otoni.omena.santos.machado.movietag.utils.Config;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    MainActivityViewModel vm;
+
+    public MainActivityViewModel getVm() {
+        return vm;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Criar ViewModel
-        final MainActivityViewModel vm = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        this.vm = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
 
         bottomNavigationView = findViewById(R.id.btNavPrincipal);

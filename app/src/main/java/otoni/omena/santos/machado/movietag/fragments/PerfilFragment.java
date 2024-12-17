@@ -2,59 +2,40 @@ package otoni.omena.santos.machado.movietag.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
+import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
+import otoni.omena.santos.machado.movietag.models.Usuario;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PerfilFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PerfilFragment extends Fragment {
+    MainActivity mainActivity;
+    Usuario usuario;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public PerfilFragment() {
-        // Required empty public constructor
+    public PerfilFragment(MainActivity mainActivity, Usuario usuario) {
+        this.mainActivity = mainActivity;
+        this.usuario = usuario;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PerfilFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PerfilFragment newInstance(String param1, String param2) {
-        PerfilFragment fragment = new PerfilFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public static PerfilFragment newInstance(MainActivity mainActivity, Usuario usuario) {
+        return new PerfilFragment(mainActivity, usuario);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -62,5 +43,61 @@ public class PerfilFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_perfil, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ImageView imvFotoPerfil = view.findViewById(R.id.imvFotoPerfilUsuario);
+        TextView tvNome = view.findViewById(R.id.tvNomeUsuarioPerfil);
+        TextView tvQtdAvaliacoes = view.findViewById(R.id.tvQtdAvaliacoes);
+        TextView tvQtdTagsCriadas = view.findViewById(R.id.tvQtdTagsCriadas);
+        TextView tvEmail = view.findViewById(R.id.tvEmailUsuarioPerfil);
+        ImageButton imbEditarPerfil = view.findViewById(R.id.imBEditarPerfil);
+        Button btnTags = view.findViewById(R.id.btnTagsFavoritas);
+        Button btnAvaliacoes = view.findViewById(R.id.btnAvaliacoes);
+
+        imvFotoPerfil.setImageResource(usuario.getFoto());
+        tvNome.setText(usuario.getUsuario());
+        tvQtdAvaliacoes.setText(mainActivity.getVm().getAvaliacoesUsuario().size());
+        tvQtdTagsCriadas.setText(mainActivity.getVm().getTagsCriadas().size());
+        tvEmail.setText(usuario.getEmail());
+
+
+        TabTagsFragment tabTags = TabTagsFragment.newInstance();
+        setFragment(tabTags);
+
+        btnTags.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TabTagsFragment tabTags = TabTagsFragment.newInstance();
+                setFragment(tabTags);
+            }
+        });
+
+        btnAvaliacoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TabAvaliacoesFragment tabAvaliacoes = TabAvaliacoesFragment.newInstance();
+                setFragment(tabAvaliacoes);
+            }
+        });
+
+        imbEditarPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditarPerfilFragment editarPerfilFrag = EditarPerfilFragment.newInstance();
+                mainActivity.setFragment(editarPerfilFrag);
+            }
+        });
+
+
+    }
+
+    public void setFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fTabsUsuario, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

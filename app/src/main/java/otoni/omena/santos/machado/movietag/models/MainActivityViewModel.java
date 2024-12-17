@@ -12,6 +12,7 @@ public class MainActivityViewModel extends ViewModel {
     List<ListaProducoes> listas;
     List<ListaProducoes> listasPadrao;
     List<Avaliacao> avaliacoes;
+    List<Tag> tagsCriadas;
 
     Usuario usuario;
 
@@ -40,5 +41,13 @@ public class MainActivityViewModel extends ViewModel {
 
     public List<ListaProducoes> getListasPadrao() {
         return this.listasPadrao;
+    }
+
+    public List<Avaliacao>  getAvaliacoesUsuario(){
+        return avaliacoes;
+    }
+
+    public List<Tag> getTagsCriadas() {
+        return tagsCriadas;
     }
 }
