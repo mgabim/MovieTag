@@ -48,6 +48,7 @@ public class Integrante {
     }
 
     public Date getDataNascimento() {
+
         return dataNascimento;
     }
 
