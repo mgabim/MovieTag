@@ -3,6 +3,7 @@ package otoni.omena.santos.machado.movietag.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,11 @@ import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 
 public class TagsUsuarioAdapter extends RecyclerView.Adapter {
     MainActivity mainActivity;
+
+    public TagsUsuarioAdapter(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
+    }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,12 +31,13 @@ public class TagsUsuarioAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        holder.itemView.findViewById(R.id.btnUsuarioTag)
+        Button btnUsuarioTag = holder.itemView.findViewById(R.id.btnUsuarioTag);
+        btnUsuarioTag.setText(mainActivity.getVm().getTagsCriadas().get(position).getNome());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Criar frag de Tag
                 mainActivity.setFragment();
             }
         });
