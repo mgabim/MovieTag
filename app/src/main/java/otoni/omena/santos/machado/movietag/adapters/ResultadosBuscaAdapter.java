@@ -49,7 +49,7 @@ public class ResultadosBuscaAdapter extends RecyclerView.Adapter {
         tvTituloProducaoLista.setText(listaResultadoBusca.get(position).getSinopse());
 
         ImageView imvProducao = holder.itemView.findViewById(R.id.imgPosterLista);
-        imvProducao.setImageBitmap(listaResultadoBusca.get(position).getPoster());
+        imvProducao.setImageResource(listaResultadoBusca.get(position).getPoster());
 
         //Perguntar ao Daniel como preencher chip group com limite de espaço
 
