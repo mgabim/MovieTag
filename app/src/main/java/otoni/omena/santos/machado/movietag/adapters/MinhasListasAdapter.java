@@ -43,7 +43,7 @@ public class MinhasListasAdapter extends RecyclerView.Adapter {
         tvProducao.setText(producaoList.get(position).getTitulo());
 
         ImageView imvProducao = holder.itemView.findViewById(R.id.imgProducao);
-        imvProducao.setImageBitmap(producaoList.get(position).getPoster());
+        imvProducao.setImageResource(producaoList.get(position).getPoster());
 
         Producao producaoAtual = producaoList.get(position);
 
