@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".fragments.PlataformasFragment">
 
     <ScrollView
@@ -33,7 +34,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Stream" />
+                android:text="Stream"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvStream"
@@ -46,7 +50,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Alugar" />
+                android:text="Alugar"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAlugar"
@@ -59,7 +66,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Comprar" />
+                android:text="Comprar"
+                android:textColor="@color/branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvComprar"

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,8 +41,8 @@
 
                         <ImageView
                             android:id="@+id/imvFotoPerfilUsuario"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_weight="1"
                             tools:src="@tools:sample/avatars" />
                     </androidx.cardview.widget.CardView>
@@ -63,13 +63,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Avaliações" />
+                        android:text="Avaliações"
+                        android:textColor="@color/branco"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvQtdAvaliacoes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15" />
+                        android:text="15"
+                        android:textColor="@color/branco" />
                 </LinearLayout>
 
                 <Space
@@ -86,13 +89,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tags Criadas" />
+                        android:text="Tags Criadas"
+                        android:textColor="@color/branco"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvQtdTagsCriadas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27" />
+                        android:text="27"
+                        android:textColor="@color/branco" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -100,7 +106,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -113,14 +119,18 @@
                         android:id="@+id/tvNomeUsuarioPerfil"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="guihocosta" />
+                        android:text="guihocosta"
+                        android:textColor="@color/branco"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvEmailUsuarioPerfil"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="guiihocosta@gmail.com" />
+                        android:text="guiihocosta@gmail.com"
+                        android:textColor="@color/branco" />
 
                 </LinearLayout>
 
@@ -133,7 +143,8 @@
                     android:id="@+id/imBEditarPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
+                    android:background="@android:color/transparent"
                     android:src="@android:drawable/ic_menu_edit" />
 
             </LinearLayout>
