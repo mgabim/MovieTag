@@ -65,7 +65,7 @@ public class ProducaoFragment extends Fragment {
         TextView tvTitulo = view.findViewById(R.id.tvProducao);
         tvTitulo.setText(producao.getTitulo());
 
-        TextView tvDados = view.findViewById(R.id.tvDados);
+        TextView tvDados = view.findViewById(R.id.textView35);
         String dadosGerais = ""; // Implementar
         tvDados.setText(dadosGerais);
 

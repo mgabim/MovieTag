@@ -8,15 +8,14 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:background">@drawable/input_texto_arredondado</item>
         <item name="android:textColor">@color/branco</item>
-        <!--<item name="android:hintTextColor">#fff</item>-->
         <item name="android:textColorHint">#7c7c7c</item>
         <item name="android:padding">12dp</item>
     </style>
     <style name="botaoAmarelo">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginRight">32dp</item>
-        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:backgroundTint">@color/amarelo</item>
