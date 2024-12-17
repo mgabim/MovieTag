@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -65,8 +66,27 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        // Inflate the fragment's layout
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        // Initialize the Toolbar
+        Toolbar toolbar = rootView.findViewById(R.id.tbHomeFragment);
+
+        // Set the Toolbar as the ActionBar (in the Fragment)
+        if (getActivity() != null) {
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            activity.setSupportActionBar(toolbar);
+
+            // Set toolbar title or other properties
+            activity.getSupportActionBar().setTitle("MovieTag");
+        }
+
+        // Enable the menu for this fragment
+        setHasOptionsMenu(true);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return rootView;
     }
 
     @Override
@@ -81,13 +101,6 @@ public class HomeFragment extends Fragment {
         rvListasHome.setAdapter(homeAdapter);
         rvListasHome.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
-        Toolbar toolbar = view.findViewById(R.id.tbImIc);
-        if (requireActivity() instanceof MainActivity){
-            MainActivity activity = (MainActivity) requireActivity();
-            activity.setSupportActionBar(toolbar);
-        }
-
     }
 
     @Override
@@ -99,13 +112,25 @@ public class HomeFragment extends Fragment {
 
     //configurar ação quando o botão de pesquisa for acionado
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        switch (item.getItemId()){
-            case R.id.action_search:
-                //fazer a ação
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_search) {
+            navigateToEditarPerfilFragment();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void navigateToEditarPerfilFragment(){
+        EditarPerfilFragment editarPerfilFragment = new EditarPerfilFragment();
+
+        if (getActivity() != null) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flPrincipal, editarPerfilFragment) // ID do container onde os fragmentos são exibidos
+                    .addToBackStack(null) // Adiciona à pilha de navegação
+                    .commit();
+        }
+
     }
 }

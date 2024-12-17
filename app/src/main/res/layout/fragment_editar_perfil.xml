@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".fragments.EditarPerfilFragment">
@@ -19,8 +20,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:layout_marginTop="64dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -29,15 +28,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
 
-            <ImageView
-                android:id="@+id/imgPerfil"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="64dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:src="@tools:sample/avatars" />
+
+            </androidx.cardview.widget.CardView>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButton"
@@ -47,14 +53,18 @@
                 android:layout_marginTop="90dp"
                 android:clickable="true"
                 android:src="@android:drawable/ic_menu_camera"
-                app:layout_constraintStart_toStartOf="@+id/imgPerfil"
-                app:layout_constraintTop_toTopOf="@+id/imgPerfil" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <EditText
             android:id="@+id/etEditarUsuario"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
             android:ems="10"
             android:hint="Usuário: "
             android:inputType="text"
@@ -64,8 +74,10 @@
 
         <EditText
             android:id="@+id/etEditarEmail"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="Email:"
@@ -76,24 +88,39 @@
 
         <EditText
             android:id="@+id/etEditarSenha"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:ems="10"
-            android:hint="Senha: "
+            android:hint="Senha Antiga:"
             android:inputType="textPassword" />
 
         <EditText
+            android:id="@+id/etNovaSenha"
+            style="@style/inputTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="Senha Nova"
+            android:inputType="text" />
+
+        <EditText
             android:id="@+id/etConfirmarNovaSenha"
+            style="@style/inputTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:ems="10"
-            android:hint="Confirmar Senha:"
+            android:hint="Confirmar Senha Nova"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnEditarPerfil"
+            style="@style/botaoAmarelo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

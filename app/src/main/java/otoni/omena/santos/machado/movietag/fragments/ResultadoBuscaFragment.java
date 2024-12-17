@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -55,8 +56,26 @@ public class ResultadoBuscaFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the fragment's layout
+        View rootView = inflater.inflate(R.layout.fragment_resultado_busca, container, false);
+
+        // Initialize the Toolbar
+        Toolbar toolbar = rootView.findViewById(R.id.tbResultados);
+
+        // Set the Toolbar as the ActionBar (in the Fragment)
+        if (getActivity() != null) {
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            activity.setSupportActionBar(toolbar);
+
+            // Set toolbar title or other properties
+            activity.getSupportActionBar().setTitle("MovieTag");
+        }
+
+        // Enable the menu for this fragment
+        setHasOptionsMenu(true);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resultado_busca, container, false);
+        return rootView;
     }
 
     @Override
@@ -65,25 +84,10 @@ public class ResultadoBuscaFragment extends Fragment {
         RecyclerView rvResultados = (RecyclerView)view.findViewById(R.id.rvResultados);
 
         resultadosBuscaAdapter = new ListasHomeAdapter(mainActivity, listasProducoesHome);
-
-        Toolbar toolbar = view.findViewById(R.id.tbImIc);
-        if (requireActivity() instanceof MainActivity){
-            MainActivity activity =  (MainActivity) requireActivity();
-            activity.setSupportActionBar(toolbar);
-        }
     }
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
         inflater.inflate(R.menu.menu_pesquisa, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        switch (item.getItemId()){
-            case R.id.action_search:
-                //fazer a ação
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }
