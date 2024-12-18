@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/background">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:layout_marginRight="16dp"
         android:layout_weight="0"
+        android:background="@color/background"
         app:cardCornerRadius="16dp">
 
         <ImageView
@@ -36,12 +39,22 @@
                 android:id="@+id/tvTituloProducaoLista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duna: Parte Dois (2024)" />
+                android:text="Duna: Parte Dois (2024)"
+                android:textColor="@color/branco"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/ibDeletarFilme"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:color/transparent"
                 app:srcCompat="@android:drawable/ic_delete" />
 
         </LinearLayout>
@@ -56,6 +69,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/amarelo"
                 android:text="Deserto" />
 
             <com.google.android.material.chip.Chip
@@ -63,6 +77,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/amarelo"
                 android:text="Deserto" />
 
             <com.google.android.material.chip.Chip
@@ -70,6 +85,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/amarelo"
                 android:text="Deserto" />
         </com.google.android.material.chip.ChipGroup>
 
@@ -77,7 +93,10 @@
             android:id="@+id/tvSinopseProducaoLista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A jornada de Paul Atreides continua. Ele se une a Chani e aos Fremen em uma guerra de vingança contra aqueles que destruíram sua família. Diante de uma escolha entre o amor de sua vida e o destino do universo..." />
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="A jornada de Paul Atreides continua. Ele se une a Chani e aos Fremen em uma guerra de vingança contra aqueles que destruíram sua família. Diante de uma escolha entre o amor de sua vida e o destino do universo..."
+            android:textColor="@color/branco" />
 
     </LinearLayout>
 
