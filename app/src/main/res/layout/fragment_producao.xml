@@ -94,11 +94,9 @@
                             android:id="@+id/btnAvaliarProducao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:clickable="true"
-                            android:paddingLeft="22dp"
-                            app:icon="@android:drawable/star_big_off"
-                            app:iconPadding="0dp" />
+                            android:padding="10dp"
+                            app:icon="@android:drawable/star_big_off" />
 
                         <Button
                             android:id="@+id/btnAdicionarListas"
@@ -106,7 +104,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:clickable="true"
-                            app:icon="@drawable/" />
+                            android:padding="15dp"
+                            app:icon="@drawable/bookmark" />
 
                         <Button
                             android:id="@+id/btnTrailer"
@@ -214,7 +213,6 @@
             android:id="@+id/btnPlataformas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint=""
             android:text="Disponível em Prime Video"
             android:textColor="@android:color/white" />
 
