@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -86,8 +87,8 @@ public class ProducaoFragment extends Fragment {
         String dadosGerais = ""; // Implementar
         tvDados.setText(dadosGerais);
 
-        TextView tvNota = view.findViewById(R.id.tvNota);
-        tvNota.setText(producao.getNota().toString());
+        ProgressBar pb = view.findViewById(R.id.progressBar);
+        pb.setProgress(Math.round(producao.getNota()));
 
         Button btnTrailer = view.findViewById(R.id.btnTrailer);
         btnTrailer.setOnClickListener(new View.OnClickListener() {
