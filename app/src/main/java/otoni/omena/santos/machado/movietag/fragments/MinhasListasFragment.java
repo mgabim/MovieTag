@@ -4,11 +4,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -25,7 +29,7 @@ import otoni.omena.santos.machado.movietag.models.Producao;
 public class MinhasListasFragment extends Fragment {
 
     MainActivity mainActivity;
-
+    MinhasListasFragment minhasListas;
 
 
     public MinhasListasFragment(MainActivity mainActivity) {
@@ -45,8 +49,30 @@ public class MinhasListasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_minhas_listas, container, false);
+        // Inflate the fragment's layout
+        View rootView = inflater.inflate(R.layout.fragment_minhas_listas, container, false);
+
+        // Configure the Toolbar
+        Toolbar toolbar = rootView.findViewById(R.id.tbMinhasListas);
+
+        // setando como actiobar do fragment
+        if (getActivity() != null) {
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            activity.setSupportActionBar(toolbar);
+
+            // colocando o titulo de acordo com nome de integrante
+            if (activity.getSupportActionBar() != null && minhasListas != null) {
+                activity.getSupportActionBar().setTitle("Minhas Listas");
+                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
+            }
+
+            toolbar.setNavigationOnClickListener(v -> activity.onBackPressed());
+        }
+
+        setHasOptionsMenu(true);
+
+        return rootView;
     }
 
     @Override
@@ -66,5 +92,11 @@ public class MinhasListasFragment extends Fragment {
         rvMinhasListas.setAdapter(minhasListasAdapter);
         rvMinhasListas.setLayoutManager(new LinearLayoutManager(getContext()));
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
+        inflater.inflate(R.menu.menu_titulo, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }
