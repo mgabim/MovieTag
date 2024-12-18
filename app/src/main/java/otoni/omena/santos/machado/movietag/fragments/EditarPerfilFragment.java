@@ -15,8 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.CadastroActivity;
 import otoni.omena.santos.machado.movietag.models.Usuario;
 import otoni.omena.santos.machado.movietag.utils.Config;
 
@@ -50,7 +52,7 @@ public class EditarPerfilFragment extends Fragment {
             AppCompatActivity activity = (AppCompatActivity) getActivity();
             activity.setSupportActionBar(toolbar);
 
-            if (activity.getSupportActionBar() != null && editarPerfil != null) {
+            if (activity.getSupportActionBar() != null && this != null) {
                 activity.getSupportActionBar().setTitle("Perfil");
                 activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
@@ -81,12 +83,23 @@ public class EditarPerfilFragment extends Fragment {
 
         Button btnAtualizar = view.findViewById(R.id.btnEditarPerfil);
 
+
+
         btnAtualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.setEmail(etEditarEmail.getText().toString());
-                user.setUsuario(etEditarUsuario.getText().toString());
-                Config.setPassword(getActivity(), etNovaSenha.getText().toString());
+                if(etEditarSenha.getText().toString().equals(Config.getPassword(getContext()))){
+                    if(etNovaSenha.getText().toString().equals(etConfirmarSenha.getText().toString())){
+                        user.setEmail(etEditarEmail.getText().toString());
+                        user.setUsuario(etEditarUsuario.getText().toString());
+                        Config.setPassword(getActivity(), etNovaSenha.getText().toString());
+                    } else{
+                        Toast.makeText(getContext(), "As senhas devem coincidir", Toast.LENGTH_LONG).show();
+                    }
+                } else{
+                    Toast.makeText(getContext(), "A senha está errada", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
