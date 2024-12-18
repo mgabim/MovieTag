@@ -196,6 +196,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Sinopse"
                 android:textColor="@color/branco"
                 android:textStyle="bold" />
@@ -204,12 +205,14 @@
                 android:id="@+id/tvSinopse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="A jornada de Paul Atreides continua..."
                 android:textColor="@color/branco" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Elenco"
                 android:textColor="@color/branco"
                 android:textStyle="bold" />
@@ -223,9 +226,9 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="16dp"
                 android:text="Lista de Temporadas"
-                android:textAlignment="viewEnd"
+                android:textAlignment="viewStart"
                 android:textColor="@color/branco"
                 android:textStyle="bold" />
 
@@ -240,8 +243,12 @@
             android:id="@+id/btnPlataformas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/roxo"
+            android:padding="12dp"
             android:text="Disponível em Prime Video"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:cornerRadius="0dp" />
 
     </LinearLayout>
 </ScrollView>
