@@ -19,18 +19,21 @@ import android.widget.Toast;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.CadastroActivity;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.models.Usuario;
 import otoni.omena.santos.machado.movietag.utils.Config;
 
 public class EditarPerfilFragment extends Fragment {
     Usuario user;
+    MainActivity mainActivity;
 
-    public EditarPerfilFragment(Usuario user) {
+    public EditarPerfilFragment(MainActivity mainActivity, Usuario user) {
+        this.mainActivity = mainActivity;
         this.user = user;
     }
 
-    public static EditarPerfilFragment newInstance(Usuario user) {
-        return new EditarPerfilFragment(user);
+    public static EditarPerfilFragment newInstance(MainActivity mainActivity, Usuario user) {
+        return new EditarPerfilFragment(mainActivity, user);
     }
 
     @Override
@@ -93,6 +96,8 @@ public class EditarPerfilFragment extends Fragment {
                         user.setEmail(etEditarEmail.getText().toString());
                         user.setUsuario(etEditarUsuario.getText().toString());
                         Config.setPassword(getActivity(), etNovaSenha.getText().toString());
+                        PerfilFragment perfilFrag = new PerfilFragment(mainActivity, user);
+                        mainActivity.setFragment(perfilFrag);
                     } else{
                         Toast.makeText(getContext(), "As senhas devem coincidir", Toast.LENGTH_LONG).show();
                     }

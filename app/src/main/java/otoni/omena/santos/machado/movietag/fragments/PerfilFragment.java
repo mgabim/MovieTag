@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
-import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
 import otoni.omena.santos.machado.movietag.models.Usuario;
 
 public class PerfilFragment extends Fragment {
@@ -64,13 +63,13 @@ public class PerfilFragment extends Fragment {
         tvEmail.setText(usuario.getEmail());
 
 
-        TabTagsFragment tabTags = TabTagsFragment.newInstance();
+        TabTagsFragment tabTags = TabTagsFragment.newInstance(mainActivity);
         setFragment(tabTags);
 
         btnTags.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TabTagsFragment tabTags = TabTagsFragment.newInstance();
+                TabTagsFragment tabTags = TabTagsFragment.newInstance(mainActivity);
                 setFragment(tabTags);
             }
         });
@@ -78,7 +77,7 @@ public class PerfilFragment extends Fragment {
         btnAvaliacoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TabAvaliacoesFragment tabAvaliacoes = TabAvaliacoesFragment.newInstance();
+                TabAvaliacoesFragment tabAvaliacoes = TabAvaliacoesFragment.newInstance(mainActivity);
                 setFragment(tabAvaliacoes);
             }
         });
@@ -86,12 +85,10 @@ public class PerfilFragment extends Fragment {
         imbEditarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditarPerfilFragment editarPerfilFrag = EditarPerfilFragment.newInstance();
+                EditarPerfilFragment editarPerfilFrag = EditarPerfilFragment.newInstance(mainActivity, usuario);
                 mainActivity.setFragment(editarPerfilFrag);
             }
         });
-
-
     }
 
     public void setFragment(Fragment fragment) {
