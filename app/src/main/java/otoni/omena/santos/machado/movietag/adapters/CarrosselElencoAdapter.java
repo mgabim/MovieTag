@@ -50,7 +50,7 @@ public class CarrosselElencoAdapter extends RecyclerView.Adapter {
         imvIntegrante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntegranteFragment integranteFrag = new IntegranteFragment();
+                IntegranteFragment integranteFrag = new IntegranteFragment(listaIntegrantes.get(position), mainActivity);
                 mainActivity.setFragment(integranteFrag);
             }
         });
