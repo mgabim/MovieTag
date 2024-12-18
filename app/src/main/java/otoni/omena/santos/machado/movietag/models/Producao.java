@@ -17,7 +17,9 @@ public class Producao {
     private List<Tag> listaTags;
     private String sinopse;
     private List<Integrante> listaIntegrantes;
-    private List<Plataforma> listaPlataformas;
+    private List<Plataforma> listaPlataformasCompra;
+    private List<Plataforma> listaPlataformasVenda;
+    private List<Plataforma> listaPlataformasAluguel;
     private List<Producao> temporadas;
 
     public List<Producao> getTemporadas() {
@@ -116,11 +118,27 @@ public class Producao {
         this.listaIntegrantes = listaIntegrantes;
     }
 
-    public List<Plataforma> getListaPlataformas() {
-        return listaPlataformas;
+    public List<Plataforma> getListaPlataformasCompra() {
+        return listaPlataformasCompra;
     }
 
-    public void setListaPlataformas(List<Plataforma> listaPlataformas) {
-        this.listaPlataformas = listaPlataformas;
+    public void setListaPlataformasCompra(List<Plataforma> listaPlataformasCompra) {
+        this.listaPlataformasCompra = listaPlataformasCompra;
+    }
+
+    public List<Plataforma> getListaPlataformasVenda() {
+        return listaPlataformasVenda;
+    }
+
+    public void setListaPlataformasVenda(List<Plataforma> listaPlataformasVenda) {
+        this.listaPlataformasVenda = listaPlataformasVenda;
+    }
+
+    public List<Plataforma> getListaPlataformasAluguel() {
+        return listaPlataformasAluguel;
+    }
+
+    public void setListaPlataformasAluguel(List<Plataforma> listaPlataformasAluguel) {
+        this.listaPlataformasAluguel = listaPlataformasAluguel;
     }
 }

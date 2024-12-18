@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
 
-                    MinhasListasFragment minhasListasFragment = MinhasListasFragment.newInstance();
+                    MinhasListasFragment minhasListasFragment = MinhasListasFragment.newInstance(MainActivity.this);
                     setFragment(minhasListasFragment);
                 }
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
 
-                    PerfilFragment perfilFragment = PerfilFragment.newInstance();
+                    PerfilFragment perfilFragment = PerfilFragment.newInstance(MainActivity.this, vm.getUsuario());
                     setFragment(perfilFragment);
                 }
                 return true;
