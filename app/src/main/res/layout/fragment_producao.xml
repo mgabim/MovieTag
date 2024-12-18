@@ -94,7 +94,6 @@
                             android:id="@+id/btnAvaliarProducao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:clickable="true"
                             android:padding="10dp"
                             app:icon="@android:drawable/star_big_off" />
@@ -214,7 +213,6 @@
             android:id="@+id/btnPlataformas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint=""
             android:text="Disponível em Prime Video"
             android:textColor="@android:color/white" />
 
