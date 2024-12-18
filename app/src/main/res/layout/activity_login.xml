@@ -6,28 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".activities.LoginActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fbVoltarLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        app:srcCompat="?attr/homeAsUpIndicator" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:cardCornerRadius="64dp">
 
             <ImageView
@@ -43,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/input_texto_arredondado"
             android:ems="10"
@@ -75,7 +66,6 @@
             android:id="@+id/tvIrParaCadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="Não possui conta? Criar Conta"
             android:textColor="@color/branco" />
 
