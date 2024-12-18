@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -15,16 +16,16 @@ import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
+import otoni.omena.santos.machado.movietag.fragments.ListaFragment;
 import otoni.omena.santos.machado.movietag.fragments.ProducaoFragment;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class MinhasListasAdapter extends RecyclerView.Adapter {
     MainActivity mainActivity;
-    List<Producao> producaoList;
-    public MinhasListasAdapter(MainActivity mainActivity, List<Producao> producaoList) {
+
+    public MinhasListasAdapter(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
-        this.producaoList = producaoList;
     }
 
     @NonNull
@@ -39,28 +40,26 @@ public class MinhasListasAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        TextView tvProducao = holder.itemView.findViewById(R.id.tvProducao);
-        tvProducao.setText(producaoList.get(position).getTitulo());
+        TextView tvTituloItemLista = holder.itemView.findViewById(R.id.tvTituloItemLista);
+        tvTituloItemLista.setText(mainActivity.getVm().getListas().get(position).getNome());
 
-        ImageView imvProducao = holder.itemView.findViewById(R.id.imgProducao);
-        imvProducao.setImageResource(producaoList.get(position).getPoster());
-
-        Producao producaoAtual = producaoList.get(position);
-
-        FloatingActionButton fbItemLista = holder.itemView.findViewById(R.id.fbItemLista);;
-
-        imvProducao.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fbItemLista = holder.itemView.findViewById(R.id.fbItemLista);
+        fbItemLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProducaoFragment producaoFragment = ProducaoFragment.newInstance(mainActivity, producaoAtual);
-                mainActivity.setFragment(producaoFragment);
+                ListaFragment lstFrag = ListaFragment.newInstance();
+                mainActivity.setFragment(lstFrag);
             }
         });
 
+        RecyclerView rvFilmes = holder.itemView.findViewById(R.id.rvItemLista);
+        FilmesListaAdapter filmesAdapter = new FilmesListaAdapter();
+        rvFilmes.setAdapter(filmesAdapter);
+        rvFilmes.setLayoutManager(new LinearLayoutManager(rvFilmes.getContext(), LinearLayoutManager.HORIZONTAL, false));
     }
 
     @Override
     public int getItemCount() {
-        return producaoList.size();
+        return mainActivity.getVm().getListas().size();
     }
 }
