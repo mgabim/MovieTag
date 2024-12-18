@@ -26,7 +26,9 @@ public class FiltroTags {
         AutoCompleteTextView etFiltroTags = filtroTags.findViewById(R.id.etFiltroTag);
         String[] tags = { "familia", "mar", "barcos", "aventuras" };
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.select_dialog_item, tags);
+        ArrayAdapter adapter = new ArrayAdapter(activity,android.R.layout.select_dialog_item, tags);
+
+
 
         etFiltroTags.setThreshold(1);
         etFiltroTags.setAdapter(adapter);
