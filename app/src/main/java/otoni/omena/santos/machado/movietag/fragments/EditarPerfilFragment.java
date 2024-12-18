@@ -3,6 +3,7 @@ package otoni.omena.santos.machado.movietag.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -12,56 +13,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.models.Usuario;
+import otoni.omena.santos.machado.movietag.utils.Config;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EditarPerfilFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class EditarPerfilFragment extends Fragment {
+    Usuario user;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    EditarPerfilFragment editarPerfil;
-
-    public EditarPerfilFragment() {
-        // Required empty public constructor
+    public EditarPerfilFragment(Usuario user) {
+        this.user = user;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EditarPerfilFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static EditarPerfilFragment newInstance(String param1, String param2) {
-        EditarPerfilFragment fragment = new EditarPerfilFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public static EditarPerfilFragment newInstance(Usuario user) {
+        return new EditarPerfilFragment(user);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -96,5 +68,28 @@ public class EditarPerfilFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
         inflater.inflate(R.menu.menu_titulo, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        EditText etEditarUsuario = view.findViewById(R.id.etEditarUsuario);
+        EditText etEditarEmail = view.findViewById(R.id.etEditarEmail);
+        EditText etEditarSenha = view.findViewById(R.id.etEditarSenha);
+        EditText etNovaSenha = view.findViewById(R.id.etNovaSenha);
+        EditText etConfirmarSenha = view.findViewById(R.id.etConfirmarNovaSenha);
+
+        Button btnAtualizar = view.findViewById(R.id.btnEditarPerfil);
+
+        btnAtualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setEmail(etEditarEmail.getText().toString());
+                user.setUsuario(etEditarUsuario.getText().toString());
+                Config.setPassword(getActivity(), etNovaSenha.getText().toString());
+            }
+        });
+
+
     }
 }
