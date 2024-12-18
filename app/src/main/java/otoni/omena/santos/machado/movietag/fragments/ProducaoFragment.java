@@ -1,11 +1,13 @@
 package otoni.omena.santos.machado.movietag.fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -137,27 +139,30 @@ public class ProducaoFragment extends Fragment {
     // Implementar dialog de Listas
 
     private void abrirPopupAvaliacao() {
-        // Criar um diálogo
-        View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dlg_avaliacao, null);
-        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireContext());
-        builder.setView(dialogView);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // Get the layout inflater.
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dlgView = inflater.inflate(R.layout.dlg_avaliacao, null);
 
-        // Configurar elementos do layout do diálogo
-        RatingBar rbAvaliacao = dialogView.findViewById(R.id.rbAvaliacao);
-        Button btnConfirmar = dialogView.findViewById(R.id.btnConfirmarAvaliacao);
+        // Inflate and set the layout for the dialog.
+        // Pass null as the parent view because it's going in the dialog layout.
+        builder.setView(dlgView)
+                .setTitle("Avaliação")
+                // Add action buttons
+                .setPositiveButton("Avaliar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Sign in the user.
+                        RatingBar rbAvaliacao = dlgView.findViewById(R.id.rbAvaliacao);
+                        int nota = rbAvaliacao.getNumStars();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
-        // Criar e exibir o diálogo
-        androidx.appcompat.app.AlertDialog dialog = builder.create();
-        dialog.show();
-
-        btnConfirmar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int avaliacaoInt = (int) rbAvaliacao.getRating();
-                Avaliacao av = new Avaliacao(producao, avaliacaoInt);
-                dialog.dismiss(); // Fechar o diálogo
-            }
-        });
+                    }
+                });
+        builder.create().show();
     }
 
 
