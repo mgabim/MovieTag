@@ -14,12 +14,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
+import otoni.omena.santos.machado.movietag.fragments.ProducaoFragment;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class FilmesListaAdapter extends RecyclerView.Adapter {
+    MainActivity mainActivity;
     List<Producao> producoes;
-    public FilmesListaAdapter(List<Producao> producoes) {
+    public FilmesListaAdapter(MainActivity mainActivity, List<Producao> producoes) {
+        this.mainActivity = mainActivity;
         this.producoes = producoes;
     }
 
@@ -41,9 +45,19 @@ public class FilmesListaAdapter extends RecyclerView.Adapter {
         ImageView imvProducao = holder.itemView.findViewById(R.id.imvPosterLista);
         imvProducao.setImageResource(producoes.get(position).getPoster());
 
+        TextView tvSinopse = holder.itemView.findViewById(R.id.tvSinopseProducaoLista);
+        tvSinopse.setText(producoes.get(position).getSinopse());
+
         Producao producaoAtual = producoes.get(position);
 
-        FloatingActionButton fbItemLista = holder.itemView.findViewById(R.id.fbItemLista);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProducaoFragment prodFrag = new ProducaoFragment(mainActivity, producaoAtual);
+                mainActivity.setFragment(prodFrag);
+            }
+        });
+
 
 
     }

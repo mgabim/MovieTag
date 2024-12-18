@@ -18,6 +18,7 @@ import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.fragments.ListaFragment;
 import otoni.omena.santos.machado.movietag.fragments.ProducaoFragment;
+import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
@@ -43,11 +44,13 @@ public class MinhasListasAdapter extends RecyclerView.Adapter {
         TextView tvTituloItemLista = holder.itemView.findViewById(R.id.tvTituloItemLista);
         tvTituloItemLista.setText(mainActivity.getVm().getListas().get(position).getNome());
 
+        ListaProducoes listaProd = mainActivity.getVm().getListas().get(position);
+
         FloatingActionButton fbItemLista = holder.itemView.findViewById(R.id.fbItemLista);
         fbItemLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ListaFragment lstFrag = ListaFragment.newInstance();
+                ListaFragment lstFrag = ListaFragment.newInstance(listaProd);
                 mainActivity.setFragment(lstFrag);
             }
         });

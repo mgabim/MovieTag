@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -15,9 +16,13 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
+import otoni.omena.santos.machado.movietag.adapters.FilmesListaAdapter;
 import otoni.omena.santos.machado.movietag.models.ListaProducoes;
+import otoni.omena.santos.machado.movietag.models.Producao;
 
 
 public class ListaFragment extends Fragment {
@@ -25,11 +30,13 @@ public class ListaFragment extends Fragment {
     ListaProducoes lista;
 
 
-    public ListaFragment() {
-        // Required empty public constructor
+    public ListaFragment(ListaProducoes lista) {
+        this.lista = lista;
     }
 
-    public static ListaFragment newInstance() {return new ListaFragment();}
+    public static ListaFragment newInstance(ListaProducoes listaProd) {
+        return new ListaFragment(listaProd);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);}
@@ -39,18 +46,19 @@ public class ListaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rvLista = (RecyclerView)view.findViewById(R.id.rvLista);
 
-
-
+        FilmesListaAdapter filmesAdapter = new FilmesListaAdapter(mainActivity, lista.getProducoes());
+        rvLista.setAdapter(filmesAdapter);
+        rvLista.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the fragment's layout
-        View rootView = inflater.inflate(R.layout.fragment_minhas_listas, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_lista, container, false);
 
         // Configure the Toolbar
-        Toolbar toolbar = rootView.findViewById(R.id.tbMinhasListas);
+        Toolbar toolbar = rootView.findViewById(R.id.tbLista);
 
         // setando como actiobar do fragment
         if (getActivity() != null) {
@@ -58,7 +66,7 @@ public class ListaFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
 
             // colocando o titulo de acordo com nome de integrante
-            if (activity.getSupportActionBar() != null && lista != null) {
+            if (activity.getSupportActionBar() != null && this != null) {
                 activity.getSupportActionBar().setTitle(lista.getNome());
                 activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
@@ -77,6 +85,7 @@ public class ListaFragment extends Fragment {
         inflater.inflate(R.menu.menu_titulo, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
+
 
 
 }
