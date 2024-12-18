@@ -12,17 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
+import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.fragments.ResultadoBuscaFragment;
-import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class ResultadosBuscaAdapter extends RecyclerView.Adapter {
-    ResultadoBuscaFragment resultadoBuscaFragment;
+    MainActivity mainActivity;
     List<Producao> listaResultadoBusca;
 
-    public ResultadosBuscaAdapter(ResultadoBuscaFragment resultadoBuscaFragment,List<Producao> listaResultadoBusca) {
-        this.resultadoBuscaFragment = resultadoBuscaFragment;
+    public ResultadosBuscaAdapter(MainActivity mainActivity, List<Producao> listaResultadoBusca) {
+        this.mainActivity = mainActivity;
         this.listaResultadoBusca = listaResultadoBusca;
     }
 
@@ -48,7 +48,7 @@ public class ResultadosBuscaAdapter extends RecyclerView.Adapter {
         TextView tvSinopseProducaoLista = holder.itemView.findViewById(R.id.tvSinopseProducaoLista);
         tvTituloProducaoLista.setText(listaResultadoBusca.get(position).getSinopse());
 
-        ImageView imvProducao = holder.itemView.findViewById(R.id.imgPosterLista);
+        ImageView imvProducao = holder.itemView.findViewById(R.id.imvPosterLista);
         imvProducao.setImageResource(listaResultadoBusca.get(position).getPoster());
 
         //Perguntar ao Daniel como preencher chip group com limite de espaço

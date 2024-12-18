@@ -35,10 +35,10 @@ public class FilmesListaAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        TextView tvProducao = holder.itemView.findViewById(R.id.tvProducao);
+        TextView tvProducao = holder.itemView.findViewById(R.id.tvTituloProducaoLista);
         tvProducao.setText(producoes.get(position).getTitulo());
 
-        ImageView imvProducao = holder.itemView.findViewById(R.id.imgProducao);
+        ImageView imvProducao = holder.itemView.findViewById(R.id.imvPosterLista);
         imvProducao.setImageResource(producoes.get(position).getPoster());
 
         Producao producaoAtual = producoes.get(position);
