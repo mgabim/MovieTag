@@ -4,7 +4,8 @@ import android.graphics.Bitmap;
 
 public class Plataforma {
     private String nome;
-    private Bitmap foto;
+    private Integer foto;
+    private String url;
 
     public String getNome() {
         return nome;
@@ -14,11 +15,25 @@ public class Plataforma {
         this.nome = nome;
     }
 
-    public Bitmap getFoto() {
+    public Integer getFoto() {
         return foto;
     }
 
-    public void setFoto(Bitmap foto) {
+    public void setFoto(Integer foto) {
         this.foto = foto;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Plataforma(String nome, Integer foto, String url) {
+        this.nome = nome;
+        this.foto = foto;
+        this.url = url;
     }
 }

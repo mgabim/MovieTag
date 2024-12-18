@@ -47,10 +47,12 @@ public class CarrosselElencoAdapter extends RecyclerView.Adapter {
         TextView tvFuncao = holder.itemView.findViewById(R.id.tvNomePersonagem);
         tvFuncao.setText(""); // Implementar
 
+        Integrante integrante = listaIntegrantes.get(position);
+
         imvIntegrante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntegranteFragment integranteFrag = new IntegranteFragment(listaIntegrantes.get(position), mainActivity);
+                IntegranteFragment integranteFrag = new IntegranteFragment(integrante, mainActivity);
                 mainActivity.setFragment(integranteFrag);
             }
         });
