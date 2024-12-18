@@ -53,7 +53,7 @@ public class MinhasListasAdapter extends RecyclerView.Adapter {
         });
 
         RecyclerView rvFilmes = holder.itemView.findViewById(R.id.rvItemLista);
-        FilmesListaAdapter filmesAdapter = new FilmesListaAdapter();
+        FilmesListaAdapter filmesAdapter = new FilmesListaAdapter(mainActivity.getVm().getListas().get(position).getProducoes());
         rvFilmes.setAdapter(filmesAdapter);
         rvFilmes.setLayoutManager(new LinearLayoutManager(rvFilmes.getContext(), LinearLayoutManager.HORIZONTAL, false));
     }
