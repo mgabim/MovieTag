@@ -22,10 +22,7 @@ import java.util.List;
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.CarrosselFilmesAdapter;
-import otoni.omena.santos.machado.movietag.adapters.FilmesListaAdapter;
-import otoni.omena.santos.machado.movietag.adapters.ListasHomeAdapter;
 import otoni.omena.santos.machado.movietag.models.Integrante;
-import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.Producao;
 
 public class IntegranteFragment extends Fragment {
@@ -107,7 +104,7 @@ public class IntegranteFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
-        inflater.inflate(R.menu.menu_integrante, menu);
+        inflater.inflate(R.menu.menu_titulo, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 }

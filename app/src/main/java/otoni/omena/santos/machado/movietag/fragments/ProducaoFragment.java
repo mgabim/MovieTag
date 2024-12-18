@@ -6,14 +6,19 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -47,8 +52,29 @@ public class ProducaoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_producao, container, false);
+        // Inflate the fragment's layout
+        View rootView = inflater.inflate(R.layout.fragment_producao, container, false);
+
+        // Configure the Toolbar
+        Toolbar toolbar = rootView.findViewById(R.id.tbProducao);
+
+        // setando como actiobar do fragment
+        if (getActivity() != null) {
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            activity.setSupportActionBar(toolbar);
+
+            if (activity.getSupportActionBar() != null && producao != null) {
+                activity.getSupportActionBar().setTitle(producao.getTitulo());
+                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
+            }
+
+            toolbar.setNavigationOnClickListener(v -> activity.onBackPressed());
+        }
+
+        setHasOptionsMenu(true);
+
+        return rootView;
     }
 
     @Override
@@ -61,8 +87,8 @@ public class ProducaoFragment extends Fragment {
         String dadosGerais = ""; // Implementar
         tvDados.setText(dadosGerais);
 
-        TextView tvNota = view.findViewById(R.id.tvNota);
-        tvNota.setText(producao.getNota().toString());
+        ProgressBar pb = view.findViewById(R.id.progressBar);
+        pb.setProgress(Math.round(producao.getNota()));
 
         Button btnTrailer = view.findViewById(R.id.btnTrailer);
         btnTrailer.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +126,12 @@ public class ProducaoFragment extends Fragment {
         });
 
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
+        inflater.inflate(R.menu.menu_titulo, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     // Implementar dialog de Listas

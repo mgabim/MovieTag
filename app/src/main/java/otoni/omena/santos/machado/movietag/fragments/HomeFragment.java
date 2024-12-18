@@ -114,12 +114,28 @@ public class HomeFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
-            navigateToEditarPerfilFragment();
+            // Criar o Fragmento
+            ResultadoBuscaFragment resultadosFrag = ResultadoBuscaFragment.newInstance();
+            mainActivity.setFragment(resultadosFrag);
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void navigateToEditarPerfilFragment(){
         EditarPerfilFragment editarPerfilFragment = new EditarPerfilFragment();
