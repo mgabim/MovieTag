@@ -114,8 +114,15 @@ public class ProducaoFragment extends Fragment {
         rvElenco.setAdapter(elencoAdapter);
         rvElenco.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
+        TextView tvTemporadas = view.findViewById(R.id.tvTemporadas);
+        RecyclerView rvTemporadas = view.findViewById(R.id.rvTemporadas);
+        tvTemporadas.setVisibility(View.INVISIBLE);
+        rvTemporadas.setVisibility(View.INVISIBLE);
+
         if(!producao.getTemporadas().isEmpty()){
-            RecyclerView rvTemporadas = view.findViewById(R.id.rvTemporadas);
+            tvTemporadas.setVisibility(View.VISIBLE);
+            rvTemporadas.setVisibility(View.VISIBLE);
+
             ListaTemporadasAdapter lstTemporadasAdapter = new ListaTemporadasAdapter(producao.getTemporadas());
 
             rvTemporadas.setAdapter(lstTemporadasAdapter);
