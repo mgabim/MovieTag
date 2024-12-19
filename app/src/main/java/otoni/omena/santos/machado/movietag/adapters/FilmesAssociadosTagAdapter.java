@@ -37,7 +37,7 @@ public class FilmesAssociadosTagAdapter extends RecyclerView.Adapter {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         // Recebe o constraint layout
-        View v = inflater.inflate(R.layout.item_lista_producao, parent, false);
+        View v = inflater.inflate(R.layout.item_busca, parent, false);
         return new MyViewHolder(v);
     }
 

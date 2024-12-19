@@ -46,25 +46,6 @@
             app:chipSpacingHorizontal="5dp">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/amarelo"
-                android:text="Deserto"
-                app:checkedIconVisible="false"
-                app:chipEndPadding="6dp"
-                app:textEndPadding="8dp" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip2"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/amarelo"
-                android:text="Deserto" />
-
-            <com.google.android.material.chip.Chip
                 android:id="@+id/chip3"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"

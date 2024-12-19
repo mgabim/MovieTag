@@ -25,12 +25,16 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.CarrosselElencoAdapter;
 import otoni.omena.santos.machado.movietag.adapters.ListaTemporadasAdapter;
 import otoni.omena.santos.machado.movietag.models.Avaliacao;
 import otoni.omena.santos.machado.movietag.models.Producao;
+import otoni.omena.santos.machado.movietag.models.Tag;
 
 public class ProducaoFragment extends Fragment {
     MainActivity mainActivity;
@@ -94,7 +98,24 @@ public class ProducaoFragment extends Fragment {
         tvDados.setText(dadosGerais);
 
         TextView tvNota = view.findViewById(R.id.tvNota);
-        tvNota.setText(producao.getNota().toString());;
+        tvNota.setText(producao.getNota().toString());
+
+        ChipGroup chipGroup = view.findViewById(R.id.cgTagsProducao);
+        for (Tag tag : producao.getListaTags()) {
+            Chip chip = new Chip(chipGroup.getContext());
+            chip.setText(tag.getNome());
+            chip.setCheckable(false); // Define se o chip será clicável ou selecionável
+            chip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TagFragment tagFragment = TagFragment.newInstance(mainActivity, tag);
+                    mainActivity.setFragment(tagFragment);
+                }
+            });
+            // chip.setChipBackgroundColorResource(R.color.chipBackground); // Customize as cores se necessário
+            // chip.setTextColor(ContextCompat.getColor(chipGroup.getContext(), R.color.chipText)); // Personalize o texto
+            chipGroup.addView(chip); // Adiciona o chip ao ChipGroup
+        }
 
         Button btnTrailer = view.findViewById(R.id.btnTrailer);
         btnTrailer.setOnClickListener(new View.OnClickListener() {
