@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 
 import androidx.appcompat.widget.Toolbar;
@@ -96,7 +97,7 @@ public class ResultadoBuscaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rvResultados = (RecyclerView)view.findViewById(R.id.rvResultados);
 
-        Button btnFiltros = view.findViewById(R.id.btnFiltros);
+        ImageButton btnFiltros = view.findViewById(R.id.btnFiltros);
         btnFiltros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
