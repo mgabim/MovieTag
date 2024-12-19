@@ -82,7 +82,7 @@ public class ResultadoBuscaFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
 
             // Set toolbar title or other properties
-            activity.getSupportActionBar().setTitle("MovieTag");
+            activity.getSupportActionBar().setTitle("");
         }
 
         // Enable the menu for this fragment
