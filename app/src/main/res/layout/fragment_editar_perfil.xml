@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="?attr/actionBarTheme"
+        app:menu="@menu/menu_titulo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +67,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="8dp"
             android:ems="10"
-            android:hint="Usuário: "
+            android:hint="Usuário"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +81,7 @@
             android:layout_margin="16dp"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Email:"
+            android:hint="Email"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +95,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:ems="10"
-            android:hint="Senha Antiga:"
+            android:hint="Senha Antiga"
             android:inputType="textPassword" />
 
         <EditText

@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/imvPosterLista"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/prodHeight"
             android:layout_weight="0"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
@@ -55,7 +55,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@android:color/transparent"
-                app:srcCompat="@android:drawable/ic_delete" />
+                android:tint="#FB0000"
+                android:tintMode="multiply"
+                app:srcCompat="@android:drawable/ic_menu_delete" />
 
         </LinearLayout>
 

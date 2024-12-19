@@ -63,6 +63,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="0dp"
                 android:ems="10"
+                android:hint="ex: 60"
                 android:inputType="number" />
 
             <Space
@@ -91,6 +92,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="0dp"
                 android:ems="10"
+                android:hint="ex: 100"
                 android:inputType="number" />
 
         </LinearLayout>

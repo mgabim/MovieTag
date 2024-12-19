@@ -53,7 +53,7 @@
                 <ImageView
                     android:id="@+id/imgPoster"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/prodHeight"
                     android:layout_marginRight="16dp"
                     tools:src="@tools:sample/avatars" />
 

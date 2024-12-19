@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/imvPosterAvaliacao"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/prodHeight"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>

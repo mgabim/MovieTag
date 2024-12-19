@@ -38,6 +38,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/input_texto_arredondado"
             android:ems="10"
+            android:hint="Nome ou Email"
             android:inputType="text" />
 
         <EditText
@@ -50,6 +51,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/input_texto_arredondado"
             android:ems="10"
+            android:hint="Senha"
             android:inputType="textPassword" />
 
         <Button

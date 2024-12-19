@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/imvPosterLista"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/prodHeight"
             android:layout_weight="0"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
