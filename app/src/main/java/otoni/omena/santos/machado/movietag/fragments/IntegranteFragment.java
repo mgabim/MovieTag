@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
@@ -52,6 +53,13 @@ public class IntegranteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        listasProducoesAssociadas = new ArrayList<>();
+        List<Producao> listaProducoes = mainActivity.getVm().getProducoes();
+        for (Producao producao : listaProducoes) {
+            if (producao.getListaIntegrantes().contains(integrante)) {
+                listasProducoesAssociadas.add(producao);
+            }
+        }
         integranteAdapter = new CarrosselFilmesAdapter(mainActivity, listasProducoesAssociadas);
         RecyclerView rvProdAssociadas = view.findViewById(R.id.rvProdAssociadas);
 
