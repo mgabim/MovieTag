@@ -113,7 +113,10 @@ public class HomeFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
             // Criar o Fragmento
-            ResultadoBuscaFragment resultadosFrag = ResultadoBuscaFragment.newInstance();
+
+
+
+            ResultadoBuscaFragment resultadosFrag = ResultadoBuscaFragment.newInstance(mainActivity);
             mainActivity.setFragment(resultadosFrag);
             return true;
         } else {

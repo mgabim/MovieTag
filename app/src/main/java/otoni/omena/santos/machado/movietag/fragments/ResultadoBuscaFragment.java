@@ -16,10 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.List;
+
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.ListasHomeAdapter;
 import otoni.omena.santos.machado.movietag.adapters.ResultadosBuscaAdapter;
+import otoni.omena.santos.machado.movietag.models.Producao;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,14 +32,19 @@ import otoni.omena.santos.machado.movietag.adapters.ResultadosBuscaAdapter;
 public class ResultadoBuscaFragment extends Fragment {
     MainActivity mainActivity;
     ResultadosBuscaAdapter resultadosBuscaAdapter;
+    List<Producao> listaResultado;
 
-    public ResultadoBuscaFragment() {
+    public ResultadoBuscaFragment(MainActivity mainActivity, ResultadosBuscaAdapter resultadosBuscaAdapter, List<Producao> listaResultado) {
         // Required empty public constructor
+        this.mainActivity = mainActivity;
+        this.resultadosBuscaAdapter = resultadosBuscaAdapter;
+        this.listaResultado = listaResultado;
+
     }
 
 
-    public static ResultadoBuscaFragment newInstance() {
-        return new ResultadoBuscaFragment();
+    public static ResultadoBuscaFragment newInstance(MainActivity mainActivity, ResultadosBuscaAdapter resultadosBuscaAdapter, List<Producao> listaResultado) {
+        return new ResultadoBuscaFragment(mainActivity, resultadosBuscaAdapter, listaResultado);
     }
 
     public ResultadoBuscaFragment(MainActivity mainActivity) {
