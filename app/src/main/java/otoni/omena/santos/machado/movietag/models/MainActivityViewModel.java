@@ -25,30 +25,7 @@ public class MainActivityViewModel extends ViewModel {
         this.listasPadrao = new ArrayList<>();
         this.avaliacoes = new ArrayList<>();
         this.tagsCriadas = new ArrayList<>();
-    }
-    public int getNavigationOpSelected() {
-        return navigationOpSelected;
-    }
 
-    public void setNavigationOpSelected(int navigationOpSelected) {
-        this.navigationOpSelected = navigationOpSelected;
-    }
-
-    public List<Producao> getProducoes(){
-        return this.producoes;
-    }
-
-    public List<ListaProducoes> getListas(){
-        return listasPadrao;
-        //return this.listas;
-    }
-
-    public Usuario getUsuario() {
-        usuario = new Usuario(1, "guihocosta", "guiihocosta@gmail.com", R.drawable.fotoperfil);
-        return this.usuario;
-    }
-
-    public List<ListaProducoes> getListasPadrao() {
         // Criação de plataformas
         Plataforma netflix = new Plataforma("Netflix", 1, "https://www.netflix.com");
         Plataforma amazonPrime = new Plataforma("Amazon Prime", 2, "https://www.primevideo.com");
@@ -86,6 +63,9 @@ public class MainActivityViewModel extends ViewModel {
                 new ArrayList<>()
         );
 
+        // Adicionar produções à lista de produções
+        producoes.addAll(Arrays.asList(producao1, producao2));
+
         // Vincular produções às tags
         suspense.getListaProducoes().add(producao1);
         drama.getListaProducoes().addAll(Arrays.asList(producao1, producao2));
@@ -97,9 +77,34 @@ public class MainActivityViewModel extends ViewModel {
         // Adicionar listas à lista padrão
         listasPadrao.add(listaFavoritos);
         listasPadrao.add(listaRecentes);
+    }
+    public int getNavigationOpSelected() {
+        return navigationOpSelected;
+    }
 
+    public void setNavigationOpSelected(int navigationOpSelected) {
+        this.navigationOpSelected = navigationOpSelected;
+    }
+
+    public List<Producao> getProducoes(){
+        return this.producoes;
+    }
+
+    public List<ListaProducoes> getListas(){
+        return listasPadrao;
+        //return this.listas;
+    }
+
+    public Usuario getUsuario() {
+        usuario = new Usuario(1, "guihocosta", "guiihocosta@gmail.com", R.drawable.fotoperfil);
+        return this.usuario;
+    }
+
+    public List<ListaProducoes> getListasPadrao() {
         return listasPadrao;
     }
+
+
 
     public List<Avaliacao>  getAvaliacoesUsuario(){
         return avaliacoes;
