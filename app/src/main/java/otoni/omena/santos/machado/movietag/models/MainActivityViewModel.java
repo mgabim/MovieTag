@@ -39,7 +39,8 @@ public class MainActivityViewModel extends ViewModel {
     }
 
     public List<ListaProducoes> getListas(){
-        return this.listas;
+        return getListasPadrao();
+        //return this.listas;
     }
 
     public Usuario getUsuario() {

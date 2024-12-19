@@ -49,21 +49,17 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        try {
-            ImageView imvFotoPerfil = view.findViewById(R.id.imvFotoPerfilUsuario);
-            TextView tvNome = view.findViewById(R.id.tvNomeUsuarioPerfil);
-            TextView tvQtdAvaliacoes = view.findViewById(R.id.tvQtdAvaliacoes);
-            TextView tvQtdTagsCriadas = view.findViewById(R.id.tvQtdTagsCriadas);
-            TextView tvEmail = view.findViewById(R.id.tvEmailUsuarioPerfil);
+        ImageView imvFotoPerfil = view.findViewById(R.id.imvFotoPerfilUsuario);
+        TextView tvNome = view.findViewById(R.id.tvNomeUsuarioPerfil);
+        TextView tvQtdAvaliacoes = view.findViewById(R.id.tvQtdAvaliacoes);
+        TextView tvQtdTagsCriadas = view.findViewById(R.id.tvQtdTagsCriadas);
+        TextView tvEmail = view.findViewById(R.id.tvEmailUsuarioPerfil);
 
-            imvFotoPerfil.setImageResource(usuario.getFoto());
-            tvNome.setText(usuario.getUsuario());
-            tvQtdAvaliacoes.setText(String.valueOf(mainActivity.getVm().getAvaliacoesUsuario().size()));
-            tvQtdTagsCriadas.setText(String.valueOf(mainActivity.getVm().getTagsCriadas().size()));
-            tvEmail.setText(usuario.getEmail());
-        } catch (Exception e) {
-            Log.e("PerfilFragment", "Erro ao inicializar os componentes do layout", e);
-        }
+        imvFotoPerfil.setImageResource(usuario.getFoto());
+        tvNome.setText(usuario.getUsuario());
+        tvQtdAvaliacoes.setText(String.valueOf(mainActivity.getVm().getAvaliacoesUsuario().size()));
+        tvQtdTagsCriadas.setText(String.valueOf(mainActivity.getVm().getTagsCriadas().size()));
+        tvEmail.setText(usuario.getEmail());
 
 
         ImageButton imbEditarPerfil = view.findViewById(R.id.imBEditarPerfil);
