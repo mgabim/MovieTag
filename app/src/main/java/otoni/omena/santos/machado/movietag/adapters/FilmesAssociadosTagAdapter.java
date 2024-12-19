@@ -37,24 +37,24 @@ public class FilmesAssociadosTagAdapter extends RecyclerView.Adapter {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         // Recebe o constraint layout
-        View v = inflater.inflate(R.layout.item_producoes_tag, parent, false);
+        View v = inflater.inflate(R.layout.item_lista_producao, parent, false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ImageView imvPoster = holder.itemView.findViewById(R.id.imvPosterProdTag);
-        TextView tvTitulo = holder.itemView.findViewById(R.id.tvTituloProducaoTag);
+        ImageView imvPoster = holder.itemView.findViewById(R.id.imvPosterLista);
+        TextView tvTitulo = holder.itemView.findViewById(R.id.tvTituloProducaoLista);
 
         Producao prod = tag.getListaProducoes().get(position);
 
-        TextView tvSinopse = holder.itemView.findViewById(R.id.tvSinopseProducaoTag);
+        TextView tvSinopse = holder.itemView.findViewById(R.id.tvSinopseProducaoLista);
 
         imvPoster.setImageResource(prod.getPoster());
         tvTitulo.setText(prod.getTitulo());
         tvSinopse.setText(prod.getSinopse());
 
-        ChipGroup chipGroup = holder.itemView.findViewById(R.id.cgTagsProducaoTag);
+        ChipGroup chipGroup = holder.itemView.findViewById(R.id.cgTagsProducaoLista);
         for (Tag tag : prod.getListaTags()) {
             Chip chip = new Chip(chipGroup.getContext());
             chip.setText(tag.getNome());

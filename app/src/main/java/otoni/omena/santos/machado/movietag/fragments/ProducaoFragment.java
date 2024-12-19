@@ -89,8 +89,8 @@ public class ProducaoFragment extends Fragment {
         String dadosGerais = ""; // Implementar
         tvDados.setText(dadosGerais);
 
-        ProgressBar pb = view.findViewById(R.id.progressBar);
-        pb.setProgress(Math.round(producao.getNota()));
+        TextView tvNota = view.findViewById(R.id.tvNota);
+        tvNota.setText(producao.getNota().toString());;
 
         Button btnTrailer = view.findViewById(R.id.btnTrailer);
         btnTrailer.setOnClickListener(new View.OnClickListener() {

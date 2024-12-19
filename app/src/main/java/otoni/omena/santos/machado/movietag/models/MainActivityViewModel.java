@@ -2,6 +2,7 @@ package otoni.omena.santos.machado.movietag.models;
 
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import otoni.omena.santos.machado.movietag.R;
@@ -16,7 +17,13 @@ public class MainActivityViewModel extends ViewModel {
 
     Usuario usuario;
 
-
+    public MainActivityViewModel(){
+        this.producoes = new ArrayList<>();
+        this.listas = new ArrayList<>();
+        this.listasPadrao = new ArrayList<>();
+        this.avaliacoes = new ArrayList<>();
+        this.tagsCriadas = new ArrayList<>();
+    }
     public int getNavigationOpSelected() {
         return navigationOpSelected;
     }
