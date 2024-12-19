@@ -66,13 +66,11 @@ public class ListaFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
 
             // colocando o titulo de acordo com nome de integrante
-            if (activity.getSupportActionBar() != null && this != null) {
+            if (activity.getSupportActionBar() != null) {
                 activity.getSupportActionBar().setTitle(lista.getNome());
-                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
             }
 
-            toolbar.setNavigationOnClickListener(v -> activity.onBackPressed());
+
         }
 
         setHasOptionsMenu(true);

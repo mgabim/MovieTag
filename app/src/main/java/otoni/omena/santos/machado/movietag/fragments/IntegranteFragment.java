@@ -88,13 +88,9 @@ public class IntegranteFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
 
             // colocando o titulo de acordo com nome de integrante
-            if (activity.getSupportActionBar() != null && integrante != null) {
+            if (activity.getSupportActionBar() != null) {
                 activity.getSupportActionBar().setTitle(integrante.getNome());
-                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
             }
-
-            toolbar.setNavigationOnClickListener(v -> activity.onBackPressed());
         }
 
         setHasOptionsMenu(true);
