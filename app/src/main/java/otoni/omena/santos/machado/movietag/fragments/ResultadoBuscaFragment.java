@@ -1,9 +1,11 @@
 package otoni.omena.santos.machado.movietag.fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RatingBar;
+
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.List;
@@ -91,6 +96,14 @@ public class ResultadoBuscaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rvResultados = (RecyclerView)view.findViewById(R.id.rvResultados);
 
+        Button btnFiltros = view.findViewById(R.id.btnFiltros);
+        btnFiltros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirPopupFiltros();
+            }
+        });
+
         resultadosBuscaAdapter = new ResultadosBuscaAdapter(mainActivity, mainActivity.getVm().getProducoes());
     }
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
@@ -98,4 +111,25 @@ public class ResultadoBuscaFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    private void abrirPopupFiltros() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // Get the layout inflater.
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dlgView = inflater.inflate(R.layout.dlg_filtros, null);
+
+        // Inflate and set the layout for the dialog.
+        // Pass null as the parent view because it's going in the dialog layout.
+        builder.setView(dlgView)
+                .setPositiveButton("Pesquisar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        builder.create().show();
+    }
 }

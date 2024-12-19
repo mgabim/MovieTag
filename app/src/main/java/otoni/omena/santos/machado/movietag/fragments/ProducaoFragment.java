@@ -139,6 +139,14 @@ public class ProducaoFragment extends Fragment {
             }
         });
 
+        Button btnAddTag = view.findViewById(R.id.btnAdicionarTag);
+        btnAddTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirPopupAddTag();
+            }
+        });
+
 
     }
 
@@ -159,8 +167,6 @@ public class ProducaoFragment extends Fragment {
         // Inflate and set the layout for the dialog.
         // Pass null as the parent view because it's going in the dialog layout.
         builder.setView(dlgView)
-                .setTitle("Avaliação")
-                // Add action buttons
                 .setPositiveButton("Avaliar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
@@ -186,7 +192,31 @@ public class ProducaoFragment extends Fragment {
         // Inflate and set the layout for the dialog.
         // Pass null as the parent view because it's going in the dialog layout.
         builder.setView(dlgView)
-                .setTitle("Salvar Produção em")
+                // Add action buttons
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Sign in the user.
+                    }
+                });
+        builder.create().show();
+    }
+
+    private void abrirPopupAddTag() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // Get the layout inflater.
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dlgView = inflater.inflate(R.layout.dlg_adicionar_tag, null);
+
+        // Inflate and set the layout for the dialog.
+        // Pass null as the parent view because it's going in the dialog layout.
+        builder.setView(dlgView)
                 // Add action buttons
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
