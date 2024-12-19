@@ -42,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottomNavigationView = findViewById(R.id.btNavPrincipal);
+
+        HomeFragment homeFragment = HomeFragment.newInstance(MainActivity.this);
+        setFragment(homeFragment);
+        bottomNavigationView.setSelectedItemId(R.id.inicioViewOp);
+        vm.setNavigationOpSelected(R.id.inicioViewOp);
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

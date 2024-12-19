@@ -29,7 +29,6 @@ import otoni.omena.santos.machado.movietag.models.Producao;
 public class MinhasListasFragment extends Fragment {
 
     MainActivity mainActivity;
-    MinhasListasFragment minhasListas;
 
 
     public MinhasListasFragment(MainActivity mainActivity) {
