@@ -3,6 +3,5 @@
     <style name="Base.Theme.MovieTag" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/cinzaNav</item>
-        <item name="colorSecondary">@color/branco</item>
     </style>
 </resources>
