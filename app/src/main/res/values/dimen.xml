@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="prodHeight">160dp</dimen>
+    <dimen name="prodWidth">120dp</dimen>
+    <dimen name="fotoUsuario">140dp</dimen>
 </resources>

@@ -17,7 +17,7 @@
 
         <ImageView
             android:id="@+id/imvPosterLista"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/prodWidth"
             android:layout_height="@dimen/prodHeight"
             android:layout_weight="0"
             tools:srcCompat="@tools:sample/avatars" />

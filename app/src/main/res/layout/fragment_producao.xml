@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:tint="#80FFFFFF"
+                app:tint="#80FFFFFF"
                 android:tintMode="multiply"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,12 +50,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imgPoster"
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/prodHeight"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
-                    tools:src="@tools:sample/avatars" />
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:id="@+id/imgPoster"
+                        android:layout_width="@dimen/prodWidth"
+                        android:layout_height="@dimen/prodHeight"
+                        tools:src="@tools:sample/avatars" />
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
