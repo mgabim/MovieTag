@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -47,21 +49,26 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView imvFotoPerfil = view.findViewById(R.id.imvFotoPerfilUsuario);
-        TextView tvNome = view.findViewById(R.id.tvNomeUsuarioPerfil);
-        TextView tvQtdAvaliacoes = view.findViewById(R.id.tvQtdAvaliacoes);
-        TextView tvQtdTagsCriadas = view.findViewById(R.id.tvQtdTagsCriadas);
-        TextView tvEmail = view.findViewById(R.id.tvEmailUsuarioPerfil);
+        try {
+            ImageView imvFotoPerfil = view.findViewById(R.id.imvFotoPerfilUsuario);
+            TextView tvNome = view.findViewById(R.id.tvNomeUsuarioPerfil);
+            TextView tvQtdAvaliacoes = view.findViewById(R.id.tvQtdAvaliacoes);
+            TextView tvQtdTagsCriadas = view.findViewById(R.id.tvQtdTagsCriadas);
+            TextView tvEmail = view.findViewById(R.id.tvEmailUsuarioPerfil);
+
+            imvFotoPerfil.setImageResource(usuario.getFoto());
+            tvNome.setText(usuario.getUsuario());
+            tvQtdAvaliacoes.setText(String.valueOf(mainActivity.getVm().getAvaliacoesUsuario().size()));
+            tvQtdTagsCriadas.setText(String.valueOf(mainActivity.getVm().getTagsCriadas().size()));
+            tvEmail.setText(usuario.getEmail());
+        } catch (Exception e) {
+            Log.e("PerfilFragment", "Erro ao inicializar os componentes do layout", e);
+        }
+
+
         ImageButton imbEditarPerfil = view.findViewById(R.id.imBEditarPerfil);
         Button btnTags = view.findViewById(R.id.btnTagsFavoritas);
         Button btnAvaliacoes = view.findViewById(R.id.btnAvaliacoes);
-
-        imvFotoPerfil.setImageResource(usuario.getFoto());
-        tvNome.setText(usuario.getUsuario());
-        tvQtdAvaliacoes.setText(mainActivity.getVm().getAvaliacoesUsuario().size());
-        tvQtdTagsCriadas.setText(mainActivity.getVm().getTagsCriadas().size());
-        tvEmail.setText(usuario.getEmail());
-
 
         TabTagsFragment tabTags = TabTagsFragment.newInstance(mainActivity);
         setFragment(tabTags);

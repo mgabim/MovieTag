@@ -72,14 +72,13 @@ public class HomeFragment extends Fragment {
         Toolbar toolbar = rootView.findViewById(R.id.tbHomeFragment);
 
         // Set the Toolbar as the ActionBar (in the Fragment)
-        if (getActivity() != null && mainActivity != null) {
+        if (getActivity() != null) {
             AppCompatActivity activity = (AppCompatActivity) getActivity();
             activity.setSupportActionBar(toolbar);
 
             // Set toolbar title or other properties
             activity.getSupportActionBar().setTitle("MovieTag");
         }
-
         // Enable the menu for this fragment
         setHasOptionsMenu(true);
 
