@@ -57,7 +57,7 @@
                     app:cardCornerRadius="8dp">
 
                     <ImageView
-                        android:id="@+id/imgPoster"
+                        android:id="@+id/imvPoster"
                         android:layout_width="@dimen/prodWidth"
                         android:layout_height="@dimen/prodHeight"
                         tools:src="@tools:sample/avatars" />

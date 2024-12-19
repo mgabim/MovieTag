@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -53,6 +54,10 @@ public class IntegranteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ImageView imvPoster = view.findViewById(R.id.imvIntegrante);
+        imvPoster.setImageResource(integrante.getFoto());
+
         listasProducoesAssociadas = new ArrayList<>();
         List<Producao> listaProducoes = mainActivity.getVm().getProducoes();
         for (Producao producao : listaProducoes) {

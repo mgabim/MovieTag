@@ -39,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imgPerfil"
+                    android:id="@+id/imvPerfil"
                     android:layout_width="@dimen/fotoUsuario"
                     android:layout_height="@dimen/fotoUsuario"
                     tools:src="@tools:sample/avatars" />

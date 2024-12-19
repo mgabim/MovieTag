@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import otoni.omena.santos.machado.movietag.R;
@@ -74,8 +75,11 @@ public class EditarPerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ImageView imvEditarPerfil = view.findViewById(R.id.imvPerfil);
         EditText etEditarUsuario = view.findViewById(R.id.etEditarUsuario);
+        etEditarUsuario.setHint(user.getUsuario());
         EditText etEditarEmail = view.findViewById(R.id.etEditarEmail);
+        etEditarEmail.setHint(user.getEmail());
         EditText etEditarSenha = view.findViewById(R.id.etEditarSenha);
         EditText etNovaSenha = view.findViewById(R.id.etNovaSenha);
         EditText etConfirmarSenha = view.findViewById(R.id.etConfirmarNovaSenha);
