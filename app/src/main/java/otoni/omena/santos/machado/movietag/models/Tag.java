@@ -1,10 +1,10 @@
 package otoni.omena.santos.machado.movietag.models;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Tag {
     private Integer id;
     private String nome;
-    private ArrayList<Producao> listaProducoes;
+    private List<Producao> listaProducoes;
 
     public Integer getId() {
         return id;
@@ -21,11 +21,11 @@ public class Tag {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public ArrayList<Producao> getListaProducoes() {
+    public List<Producao> getListaProducoes() {
         return listaProducoes;
     }
 
-    public void setListaProducoes(ArrayList<Producao> listaProducoes) {
+    public void setListaProducoes(List<Producao> listaProducoes) {
         this.listaProducoes = listaProducoes;
     }
 }

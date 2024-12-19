@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import otoni.omena.santos.machado.movietag.R;
 import otoni.omena.santos.machado.movietag.activities.MainActivity;
+import otoni.omena.santos.machado.movietag.fragments.TagFragment;
 import otoni.omena.santos.machado.movietag.models.MyViewHolder;
 
 public class TagsUsuarioAdapter extends RecyclerView.Adapter {
@@ -37,8 +38,8 @@ public class TagsUsuarioAdapter extends RecyclerView.Adapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Criar frag de Tag
-                mainActivity.setFragment();
+                TagFragment tagFrag = TagFragment.newInstance(mainActivity, mainActivity.getVm().getTagsCriadas().get(position));
+                mainActivity.setFragment(tagFrag);
             }
         });
 

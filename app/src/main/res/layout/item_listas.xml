@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:backgroundTint="@color/background">
 
     <TextView
         android:id="@+id/tvTituloItemLista"
@@ -12,6 +14,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="@color/branco"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +39,8 @@
         android:clickable="true"
         android:rotation="0"
         android:rotationY="180"
+        android:tint="@color/branco"
+        app:backgroundTint="@color/cinzaBotao"
         app:fabCustomSize="35dp"
         app:fabSize="normal"
         app:layout_constraintEnd_toEndOf="parent"

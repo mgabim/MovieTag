@@ -34,9 +34,7 @@ import otoni.omena.santos.machado.movietag.models.MainActivityViewModel;
  */
 public class HomeFragment extends Fragment {
     ListasHomeAdapter homeAdapter;
-    List<ListaProducoes> listasProducoesHome;
     MainActivity mainActivity;
-    private View view;
     private MainActivityViewModel vm;
 
 
@@ -114,23 +112,12 @@ public class HomeFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
-            navigateToEditarPerfilFragment();
+            // Criar o Fragmento
+            ResultadoBuscaFragment resultadosFrag = ResultadoBuscaFragment.newInstance();
+            mainActivity.setFragment(resultadosFrag);
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void navigateToEditarPerfilFragment(){
-        EditarPerfilFragment editarPerfilFragment = new EditarPerfilFragment();
-
-        if (getActivity() != null) {
-            getActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.flPrincipal, editarPerfilFragment) // ID do container onde os fragmentos são exibidos
-                    .addToBackStack(null) // Adiciona à pilha de navegação
-                    .commit();
-        }
-
     }
 }

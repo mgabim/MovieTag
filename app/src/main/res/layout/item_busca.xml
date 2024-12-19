@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:padding="16dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -13,9 +15,9 @@
         app:cardCornerRadius="16dp">
 
         <ImageView
-            android:id="@+id/imgPosterLista"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/imvPosterLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="0"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
@@ -26,50 +28,40 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvTituloProducaoLista"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Duna: Parte Dois (2024)" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/imgSalvarLista"
-                style="@android:style/Widget.DeviceDefault.ImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/ic_menu_save" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tvTituloProducaoLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duna: Parte Dois (2024)"
+            android:textColor="@color/branco"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/cgTagsProducaoLista"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:chipSpacingHorizontal="5dp">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Deserto" />
+                android:backgroundTint="@color/amarelo"
+                android:text="Deserto"
+                app:checkedIconVisible="false"
+                app:chipEndPadding="6dp"
+                app:textEndPadding="8dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip2"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/amarelo"
                 android:text="Deserto" />
 
             <com.google.android.material.chip.Chip
@@ -77,6 +69,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/amarelo"
                 android:text="Deserto" />
         </com.google.android.material.chip.ChipGroup>
 
@@ -84,7 +77,8 @@
             android:id="@+id/tvSinopseProducaoLista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A jornada de Paul Atreides continua. Ele se une a Chani e aos Fremen em uma guerra de vingança contra aqueles que destruíram sua família. Diante de uma escolha entre o amor de sua vida e o destino do universo..." />
+            android:text="A jornada de Paul Atreides continua. Ele se une a Chani e aos Fremen em uma guerra de vingança contra aqueles que destruíram sua família. Diante de uma escolha entre o amor de sua vida e o destino do universo..."
+            android:textColor="@color/branco" />
 
     </LinearLayout>
 

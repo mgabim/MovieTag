@@ -83,7 +83,7 @@ public class ResultadoBuscaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView rvResultados = (RecyclerView)view.findViewById(R.id.rvResultados);
 
-        resultadosBuscaAdapter = new ListasHomeAdapter(mainActivity, listasProducoesHome);
+        resultadosBuscaAdapter = new ResultadosBuscaAdapter(mainActivity, mainActivity.getVm().getProducoes());
     }
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
         inflater.inflate(R.menu.menu_pesquisa, menu);

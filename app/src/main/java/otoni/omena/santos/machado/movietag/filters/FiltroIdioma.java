@@ -26,7 +26,7 @@ public class FiltroIdioma {
         AutoCompleteTextView etFiltroIdioma = filtroIdioma.findViewById(R.id.etFiltroIdioma);
         String[] idiomas = { "familia", "mar", "barcos", "aventuras" };
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.select_dialog_item, idiomas);
+        ArrayAdapter adapter = new ArrayAdapter(activity, android.R.layout.select_dialog_item, idiomas);
 
         etFiltroIdioma.setThreshold(4);
         etFiltroIdioma.setAdapter(adapter);

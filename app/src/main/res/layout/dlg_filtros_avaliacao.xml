@@ -28,7 +28,6 @@
             android:id="@+id/arrowType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src=""
             app:srcCompat="@android:drawable/arrow_down_float"
             app:tint="#FFFFFF" />
 
@@ -39,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/textView14"
