@@ -3,7 +3,6 @@
     <style name="Base.Theme.MovieTag" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/cinzaNav</item>
-        <item name="colorAccent">@color/cinzaBotao</item>
     </style>
 
     <style name="Theme.MovieTag" parent="Base.Theme.MovieTag" />
