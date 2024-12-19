@@ -2,13 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/inicioViewOp"
-        android:icon="@android:drawable/alert_dark_frame"
+        android:icon="@drawable/home"
         android:title="Início" />
     <item
         android:id="@+id/minhasListasViewOp"
-        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:icon="@drawable/bookmark"
         android:title="Minhas Listas" />
     <item
         android:id="@+id/perfilUsuarioOp"
-        android:title="Item" />
+        android:icon="@drawable/user"
+        android:title="Perfil" />
 </menu>
