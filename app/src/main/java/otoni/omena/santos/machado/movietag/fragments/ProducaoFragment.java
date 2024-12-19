@@ -65,13 +65,10 @@ public class ProducaoFragment extends Fragment {
             AppCompatActivity activity = (AppCompatActivity) getActivity();
             activity.setSupportActionBar(toolbar);
 
-            if (activity.getSupportActionBar() != null && producao != null) {
+            if (activity.getSupportActionBar() != null) {
                 activity.getSupportActionBar().setTitle(producao.getTitulo());
-                activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                activity.getSupportActionBar().setHomeAsUpIndicator(android.R.drawable.ic_media_previous);
-            }
 
-            toolbar.setNavigationOnClickListener(v -> activity.onBackPressed());
+            }
         }
 
         setHasOptionsMenu(true);
