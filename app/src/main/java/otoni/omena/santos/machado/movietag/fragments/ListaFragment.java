@@ -30,12 +30,14 @@ public class ListaFragment extends Fragment {
     ListaProducoes lista;
 
 
-    public ListaFragment(ListaProducoes lista) {
+    public ListaFragment(MainActivity mainActivity, ListaProducoes lista) {
+        this.mainActivity = mainActivity;
+
         this.lista = lista;
     }
 
-    public static ListaFragment newInstance(ListaProducoes listaProd) {
-        return new ListaFragment(listaProd);
+    public static ListaFragment newInstance(MainActivity mainActivity, ListaProducoes listaProd) {
+        return new ListaFragment(mainActivity, listaProd);
     }
 
     @Override

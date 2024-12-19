@@ -50,7 +50,7 @@ public class MinhasListasAdapter extends RecyclerView.Adapter {
         fbItemLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ListaFragment lstFrag = ListaFragment.newInstance(listaProd);
+                ListaFragment lstFrag = ListaFragment.newInstance(mainActivity, listaProd);
                 mainActivity.setFragment(lstFrag);
             }
         });
