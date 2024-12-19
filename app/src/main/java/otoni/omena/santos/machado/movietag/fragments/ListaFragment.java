@@ -17,6 +17,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -25,6 +29,7 @@ import otoni.omena.santos.machado.movietag.activities.MainActivity;
 import otoni.omena.santos.machado.movietag.adapters.FilmesListaAdapter;
 import otoni.omena.santos.machado.movietag.models.ListaProducoes;
 import otoni.omena.santos.machado.movietag.models.Producao;
+import otoni.omena.santos.machado.movietag.utils.Config;
 
 
 public class ListaFragment extends Fragment {
@@ -53,6 +58,16 @@ public class ListaFragment extends Fragment {
         FilmesListaAdapter filmesAdapter = new FilmesListaAdapter(mainActivity, lista.getProducoes());
         rvLista.setAdapter(filmesAdapter);
         rvLista.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        FloatingActionButton fbAddFilme = view.findViewById(R.id.fbFragmentLista);
+
+        fbAddFilme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Filme adicionado com sucesso!", Toast.LENGTH_LONG).show();
+            }
+
+        });
     }
 
     @Override

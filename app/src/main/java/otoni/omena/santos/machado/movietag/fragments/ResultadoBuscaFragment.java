@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 
 import androidx.appcompat.widget.Toolbar;
@@ -106,6 +107,7 @@ public class ResultadoBuscaFragment extends Fragment {
         });
 
         resultadosBuscaAdapter = new ResultadosBuscaAdapter(mainActivity, mainActivity.getVm().getProducoes());
+
     }
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
         inflater.inflate(R.menu.menu_pesquisa, menu);
@@ -117,6 +119,26 @@ public class ResultadoBuscaFragment extends Fragment {
         // Get the layout inflater.
         LayoutInflater inflater = requireActivity().getLayoutInflater();
         View dlgView = inflater.inflate(R.layout.dlg_filtros, null);
+
+        LinearLayout container = dlgView.findViewById(R.id.container);
+
+
+        View filtroAv = inflater.inflate(R.layout.dlg_filtros_avaliacao, container, false);
+        container.addView(filtroAv);
+
+        View filtroId = inflater.inflate(R.layout.dlg_filtros_idioma, container, false);
+        container.addView(filtroId);
+
+        View filtroTag = inflater.inflate(R.layout.dlg_filtros_tags, container, false);
+        container.addView(filtroTag);
+
+        View filtroPlat = inflater.inflate(R.layout.dlg_filtros_plataformas, container, false);
+        container.addView(filtroPlat);
+
+        View filtroTipoProd = inflater.inflate(R.layout.dlg_filtros_tipo_producao, container, false);
+        container.addView(filtroTipoProd);
+
+
 
         // Inflate and set the layout for the dialog.
         // Pass null as the parent view because it's going in the dialog layout.

@@ -154,18 +154,20 @@ public class ProducaoFragment extends Fragment {
         }
 
 
+        Button btnAvaliar = view.findViewById(R.id.btnAvaliarProducao);
+        btnAvaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirPopupAvaliacao();
+            }
+
+        });
+
         Button btnAddLista = view.findViewById(R.id.btnAdicionarListas);
         btnAddLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 abrirPopupLista();
-                ImageButton btnCriarLista = view.findViewById(R.id.btnCriarNovaLista);
-                btnCriarLista.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        abrirPopupCriarLista();
-                    }
-                });
             }
 
         });
@@ -218,42 +220,48 @@ public class ProducaoFragment extends Fragment {
     }
 
     private void abrirPopupLista() {
+        // Inicializa o Builder do diálogo
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        // Get the layout inflater.
         LayoutInflater inflater = requireActivity().getLayoutInflater();
+
+        // Infla o layout do diálogo
         View dlgView = inflater.inflate(R.layout.dlg_add_prod_lista, null);
 
-
         ImageButton btnCriarNovaLista = dlgView.findViewById(R.id.btnCriarNovaLista);
+
+        // Verifica se o botão foi encontrado
         if (btnCriarNovaLista == null) {
-            Log.e("ProducaoFragment", "btnCriarNovaLista não foi encontrado no layout dlg_add_prod_lista");
-        } else {
-            btnCriarNovaLista.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    abrirPopupCriarLista();
-                }
-            });
+            Log.e("ProducaoFragment", "btnCriarNovaLista não encontrado no layout dlg_add_prod_lista.");
+            return; // Retorna para evitar o crash
         }
 
-        // Inflate and set the layout for the dialog.
-        // Pass null as the parent view because it's going in the dialog layout.
+        // Define o comportamento do clique no botão
+        btnCriarNovaLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirPopupCriarLista();
+            }
+        });
+
+        // Configura o diálogo
         builder.setView(dlgView)
-                // Add action buttons
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        // Fecha o diálogo
                     }
                 })
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        // Sign in the user.
+                        // Implementa a lógica ao salvar a lista
                     }
                 });
+
+        // Exibe o diálogo
         builder.create().show();
     }
+
 
     private void abrirPopupAddTag() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -300,6 +308,9 @@ public class ProducaoFragment extends Fragment {
                     }
                 });
         builder.create().show();
+
+
     }
+
 
 }
