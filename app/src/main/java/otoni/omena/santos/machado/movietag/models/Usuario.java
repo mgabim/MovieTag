@@ -11,6 +11,8 @@ public class Usuario {
     private String email;
     private int foto;
 
+
+
     public Usuario(Integer id, String usuario, String email,  int foto) {
         this.id = id;
         this.usuario = usuario;

@@ -39,7 +39,7 @@ public class CarrosselElencoAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ImageView imvIntegrante = holder.itemView.findViewById(R.id.imvIntegrante);
-        imvIntegrante.setImageBitmap(listaIntegrantes.get(position).getFoto());
+        imvIntegrante.setImageResource(listaIntegrantes.get(position).getFoto());
 
         TextView tvNome = holder.itemView.findViewById(R.id.tvNomeIntegrante);
         tvNome.setText(listaIntegrantes.get(position).getNome()); // Perguntar pro Daniel como criar o relacionamento entre Integrande e Produção

@@ -22,6 +22,24 @@ public class Producao {
     private List<Plataforma> listaPlataformasAluguel;
     private List<Producao> temporadas;
 
+    public Producao(Integer id, Integer idApi, Integer poster, Integer backgroundPoster, String titulo, Date estreia, Float nota, String linkTrailer, List<Tag> listaTags, String sinopse, List<Integrante> listaIntegrantes, List<Plataforma> listaPlataformasCompra, List<Plataforma> listaPlataformasVenda, List<Plataforma> listaPlataformasAluguel, List<Producao> temporadas) {
+        this.id = id;
+        this.idApi = idApi;
+        this.poster = poster;
+        this.backgroundPoster = backgroundPoster;
+        this.titulo = titulo;
+        this.estreia = estreia;
+        this.nota = nota;
+        this.linkTrailer = linkTrailer;
+        this.listaTags = listaTags;
+        this.sinopse = sinopse;
+        this.listaIntegrantes = listaIntegrantes;
+        this.listaPlataformasCompra = listaPlataformasCompra;
+        this.listaPlataformasVenda = listaPlataformasVenda;
+        this.listaPlataformasAluguel = listaPlataformasAluguel;
+        this.temporadas = temporadas;
+    }
+
     public List<Producao> getTemporadas() {
         return temporadas;
     }

@@ -6,6 +6,11 @@ public class ListaProducoes {
     private List<Producao> producoes;
     private String nome;
 
+    public ListaProducoes(List<Producao> producoes, String nome) {
+        this.producoes = producoes;
+        this.nome = nome;
+    }
+
     public List<Producao> getProducoes() {
         return producoes;
     }
