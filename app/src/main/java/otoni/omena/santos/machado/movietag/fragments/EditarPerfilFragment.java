@@ -78,9 +78,9 @@ public class EditarPerfilFragment extends Fragment {
         ImageView imvEditarPerfil = view.findViewById(R.id.imvPerfil);
         imvEditarPerfil.setImageResource(user.getFoto());
         EditText etEditarUsuario = view.findViewById(R.id.etEditarUsuario);
-        etEditarUsuario.setHint(user.getUsuario());
+        etEditarUsuario.setText(user.getUsuario());
         EditText etEditarEmail = view.findViewById(R.id.etEditarEmail);
-        etEditarEmail.setHint(user.getEmail());
+        etEditarEmail.setText(user.getEmail());
         EditText etEditarSenha = view.findViewById(R.id.etEditarSenha);
         EditText etNovaSenha = view.findViewById(R.id.etNovaSenha);
         EditText etConfirmarSenha = view.findViewById(R.id.etConfirmarNovaSenha);
