@@ -50,7 +50,7 @@ public class FilmesListaAdapter extends RecyclerView.Adapter {
 
         Producao producaoAtual = producoes.get(position);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        imvProducao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ProducaoFragment prodFrag = new ProducaoFragment(mainActivity, producaoAtual);

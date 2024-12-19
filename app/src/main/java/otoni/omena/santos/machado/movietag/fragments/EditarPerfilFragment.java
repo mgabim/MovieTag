@@ -76,6 +76,7 @@ public class EditarPerfilFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView imvEditarPerfil = view.findViewById(R.id.imvPerfil);
+        imvEditarPerfil.setImageResource(user.getFoto());
         EditText etEditarUsuario = view.findViewById(R.id.etEditarUsuario);
         etEditarUsuario.setHint(user.getUsuario());
         EditText etEditarEmail = view.findViewById(R.id.etEditarEmail);
