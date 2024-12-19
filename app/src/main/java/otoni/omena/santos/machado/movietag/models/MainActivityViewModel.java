@@ -58,8 +58,8 @@ public class MainActivityViewModel extends ViewModel {
         Integrante ator = new Integrante(2, "Leonardo DiCaprio", R.drawable.liamnesson, "Ator", new Date(), "Masculino", "Famoso por suas atuações em filmes premiados.");
 
         // Criação de tags
-        Tag suspense = new Tag(1, "Suspense");
-        Tag drama = new Tag(2, "Drama");
+        Tag suspense = new Tag(1, "Suspense", new ArrayList<>());
+        Tag drama = new Tag(2, "Drama", new ArrayList<>());
 
         // Criação de produções
         Producao producao1 = new Producao(
@@ -85,6 +85,10 @@ public class MainActivityViewModel extends ViewModel {
                 Arrays.asList(),
                 new ArrayList<>()
         );
+
+        // Vincular produções às tags
+        suspense.getListaProducoes().add(producao1);
+        drama.getListaProducoes().addAll(Arrays.asList(producao1, producao2));
 
         // Criar listas de produções
         ListaProducoes listaFavoritos = new ListaProducoes(Arrays.asList(producao1), "Favoritos");
