@@ -7,6 +7,8 @@ public class Plataforma {
     private Integer foto;
     private String url;
 
+
+
     public String getNome() {
         return nome;
     }

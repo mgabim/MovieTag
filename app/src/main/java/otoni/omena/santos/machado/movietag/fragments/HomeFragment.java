@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
         Toolbar toolbar = rootView.findViewById(R.id.tbHomeFragment);
 
         // Set the Toolbar as the ActionBar (in the Fragment)
-        if (getActivity() != null) {
+        if (getActivity() != null && mainActivity != null) {
             AppCompatActivity activity = (AppCompatActivity) getActivity();
             activity.setSupportActionBar(toolbar);
 

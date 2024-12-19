@@ -8,12 +8,21 @@ import java.util.Date;
 public class Integrante {
     private Integer id;
     private String nome;
-    private Bitmap foto;
+    private Integer foto;
     private String atuacaoPrincipal;
     private Date dataNascimento;
     private String genero;
     private String biografia;
-    private ArrayList<Producao> listaProducoes;
+
+    public Integrante(Integer id, String nome, int foto, String atuacaoPrincipal, Date dataNascimento, String genero, String biografia) {
+        this.id = id;
+        this.nome = nome;
+        this.foto = foto;
+        this.atuacaoPrincipal = atuacaoPrincipal;
+        this.dataNascimento = dataNascimento;
+        this.genero = genero;
+        this.biografia = biografia;
+    }
 
     public Integer getId() {
         return id;
@@ -29,14 +38,6 @@ public class Integrante {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Bitmap getFoto() {
-        return foto;
-    }
-
-    public void setFoto(Bitmap foto) {
-        this.foto = foto;
     }
 
     public String getAtuacaoPrincipal() {
@@ -72,12 +73,12 @@ public class Integrante {
         this.biografia = biografia;
     }
 
-    public ArrayList<Producao> getListaProducoes() {
-        return listaProducoes;
+    public Integer getFoto() {
+        return foto;
     }
 
-    public void setListaProducoes(ArrayList<Producao> listaProducoes) {
-        this.listaProducoes = listaProducoes;
+    public void setFoto(Integer foto) {
+        this.foto = foto;
     }
 }
 

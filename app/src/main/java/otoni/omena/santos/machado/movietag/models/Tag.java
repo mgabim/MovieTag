@@ -6,6 +6,12 @@ public class Tag {
     private String nome;
     private List<Producao> listaProducoes;
 
+    public Tag(Integer id, String nome, List<Producao> listaProducoes) {
+        this.id = id;
+        this.nome = nome;
+        this.listaProducoes = listaProducoes;
+    }
+
     public Integer getId() {
         return id;
     }
