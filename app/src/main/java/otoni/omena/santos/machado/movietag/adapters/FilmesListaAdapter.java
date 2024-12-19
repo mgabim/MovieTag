@@ -53,7 +53,7 @@ public class FilmesListaAdapter extends RecyclerView.Adapter {
         imvProducao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProducaoFragment prodFrag = new ProducaoFragment(mainActivity, producaoAtual);
+                ProducaoFragment prodFrag = ProducaoFragment.newInstance(mainActivity, producaoAtual);
                 mainActivity.setFragment(prodFrag);
             }
         });
