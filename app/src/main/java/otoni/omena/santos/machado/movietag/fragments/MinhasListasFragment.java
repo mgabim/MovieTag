@@ -1,9 +1,11 @@
 package otoni.omena.santos.machado.movietag.fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -15,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -78,7 +81,7 @@ public class MinhasListasFragment extends Fragment {
         fbCriarLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Configurar dialog de Criar Lista
+                abrirPopupCriarLista();
             }
         });
 
@@ -87,11 +90,34 @@ public class MinhasListasFragment extends Fragment {
         rvMinhasListas.setAdapter(minhasListasAdapter);
         rvMinhasListas.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
     }
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
         inflater.inflate(R.menu.menu_titulo, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void abrirPopupCriarLista() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // Get the layout inflater.
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dlgView = inflater.inflate(R.layout.dlg_criar_lista, null);
+
+        // Inflate and set the layout for the dialog.
+        // Pass null as the parent view because it's going in the dialog layout.
+        builder.setView(dlgView)
+                .setPositiveButton("Criar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        builder.create().show();
     }
 }
