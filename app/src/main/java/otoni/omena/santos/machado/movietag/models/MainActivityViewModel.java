@@ -39,7 +39,7 @@ public class MainActivityViewModel extends ViewModel {
     }
 
     public List<ListaProducoes> getListas(){
-        return getListasPadrao();
+        return listasPadrao;
         //return this.listas;
     }
 
