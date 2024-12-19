@@ -50,7 +50,6 @@ public class PerfilFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView imvFotoPerfil = view.findViewById(R.id.imvFotoPerfilUsuario);
-        imvFotoPerfil.setImageResource(usuario.getFoto());
         TextView tvNome = view.findViewById(R.id.tvNomeUsuarioPerfil);
         TextView tvQtdAvaliacoes = view.findViewById(R.id.tvQtdAvaliacoes);
         TextView tvQtdTagsCriadas = view.findViewById(R.id.tvQtdTagsCriadas);
