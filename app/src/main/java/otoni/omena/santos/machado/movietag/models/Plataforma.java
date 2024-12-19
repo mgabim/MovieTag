@@ -2,6 +2,8 @@ package otoni.omena.santos.machado.movietag.models;
 
 import android.graphics.Bitmap;
 
+import java.util.List;
+
 public class Plataforma {
     private String nome;
     private Integer foto;
