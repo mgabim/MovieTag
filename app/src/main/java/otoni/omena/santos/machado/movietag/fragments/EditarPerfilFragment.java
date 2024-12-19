@@ -57,7 +57,7 @@ public class EditarPerfilFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
 
             if (activity.getSupportActionBar() != null) {
-                activity.getSupportActionBar().setTitle("Perfil");
+                activity.getSupportActionBar().setTitle("Editar Perfil");
             }
         }
 

@@ -131,6 +131,14 @@ public class ProducaoFragment extends Fragment {
             }
         });
 
+        Button btnAddLista = view.findViewById(R.id.btnAdicionarListas);
+        btnAddLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirPopupLista();
+            }
+        });
+
 
     }
 
@@ -164,6 +172,32 @@ public class ProducaoFragment extends Fragment {
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
+                    }
+                });
+        builder.create().show();
+    }
+
+    private void abrirPopupLista() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // Get the layout inflater.
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dlgView = inflater.inflate(R.layout.dlg_add_prod_lista, null);
+
+        // Inflate and set the layout for the dialog.
+        // Pass null as the parent view because it's going in the dialog layout.
+        builder.setView(dlgView)
+                .setTitle("Salvar Produção em")
+                // Add action buttons
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Sign in the user.
                     }
                 });
         builder.create().show();
