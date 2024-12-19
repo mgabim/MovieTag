@@ -99,7 +99,7 @@ public class MinhasListasFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    private void abrirPopupCriarLista() {
+    public void abrirPopupCriarLista() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater.
         LayoutInflater inflater = requireActivity().getLayoutInflater();

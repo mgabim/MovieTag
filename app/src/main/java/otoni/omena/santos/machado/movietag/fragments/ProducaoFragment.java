@@ -14,12 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
@@ -39,6 +41,7 @@ import otoni.omena.santos.machado.movietag.models.Tag;
 public class ProducaoFragment extends Fragment {
     MainActivity mainActivity;
     Producao producao;
+    MinhasListasFragment minhalista;
 
     public ProducaoFragment(MainActivity mainActivity, Producao producao) {
         this.mainActivity = mainActivity;
@@ -151,20 +154,20 @@ public class ProducaoFragment extends Fragment {
         }
 
 
-        Button btnAvaliar = view.findViewById(R.id.btnAvaliarProducao);
-        btnAvaliar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirPopupAvaliacao();
-            }
-        });
-
         Button btnAddLista = view.findViewById(R.id.btnAdicionarListas);
         btnAddLista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 abrirPopupLista();
+                ImageButton btnCriarLista = view.findViewById(R.id.btnCriarNovaLista);
+                btnCriarLista.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        abrirPopupCriarLista();
+                    }
+                });
             }
+
         });
 
         Button btnAddTag = view.findViewById(R.id.btnAdicionarTag);
@@ -176,7 +179,10 @@ public class ProducaoFragment extends Fragment {
         });
 
 
+
     }
+
+
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
@@ -216,6 +222,19 @@ public class ProducaoFragment extends Fragment {
         // Get the layout inflater.
         LayoutInflater inflater = requireActivity().getLayoutInflater();
         View dlgView = inflater.inflate(R.layout.dlg_add_prod_lista, null);
+
+
+        ImageButton btnCriarNovaLista = dlgView.findViewById(R.id.btnCriarNovaLista);
+        if (btnCriarNovaLista == null) {
+            Log.e("ProducaoFragment", "btnCriarNovaLista não foi encontrado no layout dlg_add_prod_lista");
+        } else {
+            btnCriarNovaLista.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    abrirPopupCriarLista();
+                }
+            });
+        }
 
         // Inflate and set the layout for the dialog.
         // Pass null as the parent view because it's going in the dialog layout.
@@ -261,7 +280,26 @@ public class ProducaoFragment extends Fragment {
         builder.create().show();
     }
 
+    public void abrirPopupCriarLista() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // Get the layout inflater.
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dlgView = inflater.inflate(R.layout.dlg_criar_lista, null);
 
+        // Inflate and set the layout for the dialog.
+        // Pass null as the parent view because it's going in the dialog layout.
+        builder.setView(dlgView)
+                .setPositiveButton("Criar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
+                    }
+                });
+        builder.create().show();
+    }
 
 }
