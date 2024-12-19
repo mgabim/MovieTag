@@ -54,8 +54,8 @@ public class MainActivityViewModel extends ViewModel {
         Plataforma amazonPrime = new Plataforma("Amazon Prime", 2, "https://www.primevideo.com");
 
         // Criação de integrantes
-        Integrante diretor = new Integrante(1, "Christopher Nolan", 1, "Diretor", new Date(), "Masculino", "Conhecido por filmes complexos e inovadores.");
-        Integrante ator = new Integrante(2, "Leonardo DiCaprio", 2, "Ator", new Date(), "Masculino", "Famoso por suas atuações em filmes premiados.");
+        Integrante diretor = new Integrante(1, "Christopher Nolan", R.drawable.liamnesson, "Diretor", new Date(), "Masculino", "Conhecido por filmes complexos e inovadores.");
+        Integrante ator = new Integrante(2, "Leonardo DiCaprio", R.drawable.liamnesson, "Ator", new Date(), "Masculino", "Famoso por suas atuações em filmes premiados.");
 
         // Criação de tags
         Tag suspense = new Tag(1, "Suspense", new ArrayList<>());

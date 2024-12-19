@@ -79,7 +79,7 @@ public class ProducaoFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView tvTitulo = view.findViewById(R.id.tvProducao);
+        TextView tvTitulo = view.findViewById(R.id.tvTitulo);
         tvTitulo.setText(producao.getTitulo());
 
         TextView tvDados = view.findViewById(R.id.tvInfoFilme);
