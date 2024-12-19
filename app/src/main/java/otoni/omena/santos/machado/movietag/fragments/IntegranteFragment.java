@@ -30,7 +30,6 @@ import otoni.omena.santos.machado.movietag.models.Producao;
 public class IntegranteFragment extends Fragment {
     MainActivity mainActivity;
     Integrante integrante;
-    List<Producao> listasProducoesAssociadas;
     CarrosselFilmesAdapter integranteAdapter;
 
 
@@ -58,14 +57,7 @@ public class IntegranteFragment extends Fragment {
         ImageView imvPoster = view.findViewById(R.id.imvIntegrante);
         imvPoster.setImageResource(integrante.getFoto());
 
-        listasProducoesAssociadas = new ArrayList<>();
-        List<Producao> listaProducoes = mainActivity.getVm().getProducoes();
-        for (Producao producao : listaProducoes) {
-            if (producao.getListaIntegrantes().contains(integrante)) {
-                listasProducoesAssociadas.add(producao);
-            }
-        }
-        integranteAdapter = new CarrosselFilmesAdapter(mainActivity, listasProducoesAssociadas);
+        integranteAdapter = new CarrosselFilmesAdapter(mainActivity, integrante.getProducoes());
         RecyclerView rvProdAssociadas = view.findViewById(R.id.rvProdAssociadas);
 
         TextView tvConhPor = view.findViewById(R.id.tvConhPor);

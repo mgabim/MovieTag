@@ -66,6 +66,18 @@ public class MainActivityViewModel extends ViewModel {
         // Adicionar produções à lista de produções
         producoes.addAll(Arrays.asList(producao1, producao2));
 
+        // Adicionar tags à lista de tags
+        tagsCriadas.addAll(Arrays.asList(suspense, drama));
+
+        // Adicionar produções à lista de tags
+        suspense.getListaProducoes().add(producao1);
+        drama.getListaProducoes().addAll(Arrays.asList(producao1, producao2));
+
+        // Adicionar produções à lista de integrantes
+        diretor.getProducoes().add(producao1);
+        ator.getProducoes().add(producao1);
+
+
         // Vincular produções às tags
         suspense.getListaProducoes().add(producao1);
         drama.getListaProducoes().addAll(Arrays.asList(producao1, producao2));

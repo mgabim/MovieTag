@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Integrante {
     private Integer id;
@@ -13,8 +14,9 @@ public class Integrante {
     private Date dataNascimento;
     private String genero;
     private String biografia;
+    private List<Producao> producoes;
 
-    public Integrante(Integer id, String nome, int foto, String atuacaoPrincipal, Date dataNascimento, String genero, String biografia) {
+    public Integrante(Integer id, String nome, int foto, String atuacaoPrincipal, Date dataNascimento, String genero, String biografias) {
         this.id = id;
         this.nome = nome;
         this.foto = foto;
@@ -22,6 +24,7 @@ public class Integrante {
         this.dataNascimento = dataNascimento;
         this.genero = genero;
         this.biografia = biografia;
+        this.producoes = new ArrayList<>();
     }
 
     public Integer getId() {
@@ -79,6 +82,14 @@ public class Integrante {
 
     public void setFoto(Integer foto) {
         this.foto = foto;
+    }
+
+    public List<Producao> getProducoes() {
+        return producoes;
+    }
+
+    public void setProducoes(List<Producao> producoes) {
+        this.producoes = producoes;
     }
 }
 
