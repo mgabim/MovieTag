@@ -62,7 +62,7 @@ public class MainActivityViewModel extends ViewModel {
 
         // Criação de produções
         Producao producao1 = new Producao(
-                1, 101, 1, 2, "Inception", new Date(), 8.8f,
+                1, 101, R.drawable.posterprod, R.drawable.backgroundposter, "Inception", new Date(), 8.8f,
                 "https://www.youtube.com/watch?v=8hP9D6kZseM",
                 Arrays.asList(suspense, drama),
                 "Um ladrão que rouba segredos corporativos...",
@@ -74,7 +74,7 @@ public class MainActivityViewModel extends ViewModel {
         );
 
         Producao producao2 = new Producao(
-                2, 102, 3, 4, "Interstellar", new Date(), 8.6f,
+                2, 102, R.drawable.posterprod, R.drawable.backgroundposter, "Interstellar", new Date(), 8.6f,
                 "https://www.youtube.com/watch?v=zSWdZVtXT7E",
                 Arrays.asList(drama),
                 "Um grupo de exploradores viaja através de um buraco negro...",
